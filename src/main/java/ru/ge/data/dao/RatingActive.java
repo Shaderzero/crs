@@ -59,4 +59,15 @@ public class RatingActive {
     public void setDonor(Counterparty donor) {
         this.donor = donor;
     }
+
+    @Override
+    public String toString() {
+        return "RatingActive{" +
+                "counterparty=" + counterparty +
+                ", rating=" + rating +
+                ", source='" + source + '\'' +
+                ", startDate=" + startDate +
+                ", donor=" + donor +
+                '}';
+    }
 }
