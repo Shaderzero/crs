@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="1000.0"
+            style="-fx-background-color: #2E3348;" fx:controller="ru.ge.guifx.controllers.AppController">
+    <children>
+        <VBox maxHeight="Infinity" maxWidth="Infinity" spacing="5.0" style="-fx-background-color: #fafafa;"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <Label maxHeight="60.0" maxWidth="Infinity" minHeight="60.0" prefHeight="60.0"
+                       style="-fx-background-color: darkblue;" text="Cred Risk Suite" textFill="#fafafa"
+                       VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                    <padding>
+                        <Insets left="10.0" right="10.0"/>
+                    </padding>
+                </Label>
+                <HBox maxWidth="Infinity" spacing="5.0" VBox.vgrow="NEVER">
+                    <children>
+                        <Button fx:id="btnCounterparties" onAction="#showCounterparties" prefHeight="25.0"
+                                prefWidth="135.0" text="Counterparties"/>
+                        <Button fx:id="btnCountries" onAction="#showCountries" prefHeight="25.0" prefWidth="135.0"
+                                text="Countries"/>
+                        <Button fx:id="btnGuarantees" onAction="#showGuarantees" prefHeight="25.0" prefWidth="135.0"
+                                text="Guarantees"/>
+                        <Button onAction="#convertDB" prefHeight="25.0" prefWidth="135.0" text="Convert DB"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </VBox.margin>
+                </HBox>
+                <AnchorPane fx:id="output" VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0"/>
+                    </VBox.margin>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+        <!--        <property name="connection.url">jdbc:sqlserver://sql;databaseName=RM_ACCOUNTS;integratedSecurity=true</property>-->
+        <property name="connection.url">jdbc:sqlserver://sql;databaseName=RM_ACCOUNTS;integratedSecurity=true</property>
+        <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+
+        <!-- NOTE that after automapping with IDEA property username and password will delete -->
+        <!--and will be:  Initial SessionFactory failedorg.ru.ge.data.service.spi.ServiceException: Unable to create requested service-->
+        <!-- NOTE that after automapping with IDEA property username and password will delete -->
+        <mapping class="ru.ge.data.entities2.Committee2"/>
+        <mapping class="ru.ge.data.entities2.CommitteeGroup2"/>
+        <mapping class="ru.ge.data.entities2.CommitteeLimit2"/>
+        <mapping class="ru.ge.data.entities2.CommitteeStatus2"/>
+        <mapping class="ru.ge.data.entities2.Counterparty2"/>
+        <mapping class="ru.ge.data.entities2.Country2"/>
+        <mapping class="ru.ge.data.entities2.Currency2"/>
+        <mapping class="ru.ge.data.entities2.FinancialSector2"/>
+        <mapping class="ru.ge.data.entities2.Portfolio2"/>
+        <mapping class="ru.ge.data.entities2.RatingAgency2"/>
+        <mapping class="ru.ge.data.entities2.RatingCounterpartyExt2"/>
+        <mapping class="ru.ge.data.entities2.RatingCounterpartyInt2"/>
+        <mapping class="ru.ge.data.entities2.RatingCountry2"/>
+        <mapping class="ru.ge.data.entities2.RatingGroup2"/>
+        <mapping class="ru.ge.data.entities2.RatingGroupX2"/>
+        <mapping class="ru.ge.data.entities2.RatingValue2"/>
+        <mapping class="ru.ge.data.entities2.CounterpartyFinancialStatement2"/>
+        <mapping class="ru.ge.data.entities2.GuaranteeName2"/>
+        <mapping class="ru.ge.data.entities2.GuaranteeType2"/>
+        <mapping class="ru.ge.data.entities2.Guarantee2"/>
+        <mapping class="ru.ge.data.entities2.RiskClass2"/>
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">refresh</property> -->
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="FacetManager">
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map>
+          <unit-entry name="corebase.cfg.xml" value="e47739c0-bae7-4099-b2e4-94b94255dda9" />
+          <unit-entry name="crsbase.cfg.xml" value="c1790b2a-d2b8-4dc2-b31a-c057410da7d7" />
+          <unit-entry name="rmaccountsbase.cfg.xml" value="1d24c910-4fdb-4df7-96b3-c2f0372f3b96" />
+        </datasource-map>
+        <naming-strategy-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/corebase.cfg.xml" />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/crsbase.cfg.xml" />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/rmaccountsbase.cfg.xml" />
+      </configuration>
+    </facet>
+  </component>
+</module>

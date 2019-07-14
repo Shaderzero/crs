@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<TabPane xmlns:fx="http://javafx.com/fxml/1" fx:id="tabPane" prefHeight="200.0" prefWidth="200.0"
+         fx:controller="ru.ge.guifx.controllers.GuaranteesController">
+    <tabs>
+        <Tab closable="false" text="Counterparties">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0">
+                    <children>
+                        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <center>
+                                <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="Infinity"
+                                            maxWidth="Infinity">
+                                    <content>
+                                        <TableView fx:id="table" maxHeight="Infinity"
+                                                   maxWidth="Infinity" tableMenuButtonVisible="true">
+                                            <columns>
+                                                <TableColumn fx:id="idCol" maxWidth="40.0" minWidth="40.0"
+                                                             prefWidth="40.0" resizable="false" text="ID"/>
+                                                <TableColumn fx:id="numberCol" maxWidth="1000.0" minWidth="50.0"
+                                                             prefWidth="200.0" text="Number"/>
+                                                <TableColumn fx:id="dateStartCol" maxWidth="1000.0" prefWidth="100.0"
+                                                             text="Start Date"/>
+                                                <TableColumn fx:id="amountInitCol" maxWidth="1000.0" prefWidth="100.0"
+                                                             text="Init Amount"/>
+                                                <TableColumn fx:id="currencyCol" maxWidth="60.0" minWidth="60.0"
+                                                             prefWidth="30.0" resizable="false" text="Cur"/>
+                                                <TableColumn fx:id="dateEndLastCol" maxWidth="1000.0" minWidth="30.0"
+                                                             prefWidth="100.0" text="Last Date"/>
+                                                <TableColumn fx:id="amountLastCol" maxWidth="1000.0" prefWidth="100.0"
+                                                             text="Last Amount"/>
+                                                <TableColumn fx:id="counterpartyCol" maxWidth="1000.0" minWidth="50.0"
+                                                             prefWidth="200.0" text="Counterparty"/>
+                                                <TableColumn fx:id="guarantorCol" maxWidth="1000.0" minWidth="50.0"
+                                                             prefWidth="200.0" text="Guarantor"/>
+                                                <TableColumn fx:id="benificiarCol" maxWidth="1000.0" minWidth="50.0"
+                                                             prefWidth="200.0" text="Beneficiar"/>
+                                                <TableColumn fx:id="subsidiaryCol" maxWidth="1000.0" minWidth="50.0"
+                                                             prefWidth="200.0" text="Subsidiary"/>
+                                                <TableColumn fx:id="typeCol" maxWidth="1000.0" minWidth="50.0"
+                                                             prefWidth="200.0" text="Type"/>
+                                                <TableColumn fx:id="commentCol" maxWidth="1000.0" minWidth="50.0"
+                                                             prefWidth="200.0" text="Comment"/>
+                                            </columns>
+                                            <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                            </columnResizePolicy>
+                                        </TableView>
+                                    </content>
+                                </ScrollPane>
+                            </center>
+                            <bottom>
+                                <ButtonBar buttonMinWidth="40.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0"
+                                           BorderPane.alignment="CENTER">
+                                    <buttons>
+                                        <Button id="btnAdd" onAction="#newGuarantee" text="Add"/>
+                                        <Button id="btnEdit" text="Edit"/>
+                                        <Button onAction="#deleteGuarantee" text="Delete"/>
+                                        <Button id="btnExport" text="Export"/>
+                                    </buttons>
+                                    <padding>
+                                        <Insets topRightBottomLeft="5"/>
+                                    </padding>
+                                </ButtonBar>
+                            </bottom>
+                        </BorderPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="0.0" minWidth="0.0"
+            fx:controller="ru.ge.guifx.controllers.CounterpartyFormController">
+    <children>
+        <VBox maxHeight="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox maxHeight="Infinity" spacing="5.0">
+                    <children>
+                        <Label maxHeight="Infinity" text="Name"/>
+                        <TextField fx:id="nameField" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                        <HBox alignment="TOP_RIGHT" spacing="5">
+                            <children>
+                                <ToggleButton fx:id="btnEditMode" disable="true" onAction="#toggleEditMode"
+                                              text="Edit"/>
+                                <Button fx:id="btnSaveCounterparty" onAction="#saveCounterparty" text="Save"/>
+                                <Button fx:id="btnDeleteCounterparty" text="Delete"/>
+                                <Label maxHeight="Infinity" text="id"/>
+                                <TextField fx:id="idField" disable="true" editable="false" minWidth="50.0"
+                                           prefWidth="50.0"/>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </HBox>
+                <FlowPane hgap="5">
+                    <children>
+                        <GridPane maxWidth="300.0" minWidth="300.0" prefWidth="300.0" hgap="5" vgap="1">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                            </rowConstraints>
+                            <children>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Short Name"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Financial Sector"
+                                       GridPane.rowIndex="1"/>
+                                <ComboBox fx:id="financialSectorBox" maxWidth="Infinity" GridPane.columnIndex="1"
+                                          GridPane.rowIndex="1"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Rating Donor"
+                                       GridPane.rowIndex="2"/>
+                                <ComboBox fx:id="ratingDonorBox" maxWidth="Infinity" GridPane.columnIndex="1"
+                                          GridPane.rowIndex="2"/>
+                                <TextField fx:id="shortNameField" maxWidth="Infinity" GridPane.columnIndex="1"/>
+                            </children>
+                        </GridPane>
+                        <GridPane maxWidth="300.0" minWidth="300.0" prefWidth="300.0" hgap="5" vgap="1">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                            </rowConstraints>
+                            <children>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Country of Domicile"/>
+                                <ComboBox fx:id="countryDomicileBox" maxWidth="Infinity" GridPane.columnIndex="1"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Country of Risk"
+                                       GridPane.rowIndex="1"/>
+                                <ComboBox fx:id="countryRiskBox" maxWidth="Infinity" GridPane.columnIndex="1"
+                                          GridPane.rowIndex="1"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Group" GridPane.rowIndex="2"/>
+                                <ComboBox fx:id="groupBox" maxWidth="Infinity" prefWidth="150.0"
+                                          GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            </children>
+                        </GridPane>
+                        <GridPane maxWidth="300.0" minWidth="300.0" prefWidth="300.0" hgap="5" vgap="1">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="120.0"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="40.0"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                            </rowConstraints>
+                            <children>
+                                <Label alignment="CENTER" maxWidth="Infinity" prefHeight="65.0" prefWidth="115.0"
+                                       text="Portfolio"/>
+                                <CheckBox fx:id="firstPortfolioBox" mnemonicParsing="false" text="Газовый отчёт"
+                                          GridPane.rowIndex="1"/>
+                                <CheckBox fx:id="secondPortfolioBox" mnemonicParsing="false" text="Нефтяной отчёт"
+                                          GridPane.rowIndex="2"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="INN"
+                                       GridPane.columnIndex="1"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="SWIFT"
+                                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Ticker"
+                                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <TextField fx:id="innField" GridPane.columnIndex="2"/>
+                                <TextField fx:id="swiftField" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tickerField" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                            </children>
+                        </GridPane>
+                    </children>
+                </FlowPane>
+                <ScrollPane maxWidth="Infinity" fitToWidth="true"
+                            style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;">
+                    <!--                    <AnchorPane minHeight="0" minWidth="0" style=" -fx-border-color:red; -fx-border-width: 1; -fx-border-style: solid;">-->
+                    <VBox minWidth="0" prefWidth="900.0" maxWidth="Infinity" spacing="5"
+                          style=" -fx-border-color:blue; -fx-border-width: 1; -fx-border-style: solid;">
+                        <children>
+                            <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                                <children>
+                                    <HBox spacing="5">
+                                        <Label maxHeight="Infinity" HBox.hgrow="ALWAYS" alignment="CENTER"
+                                               contentDisplay="CENTER" maxWidth="Infinity" text="Internal Ratings"/>
+                                        <HBox alignment="BASELINE_RIGHT" spacing="5">
+                                            <children>
+                                                <Button fx:id="btnAddInternalRating" onAction="#addRatingInternal"
+                                                        text="Add"/>
+                                                <Button fx:id="btnEditInternalRating" onAction="#editRatingInternal"
+                                                        text="Edit"/>
+                                                <Button fx:id="btnDeleteInternalRating" onAction="#deleteRatingInternal"
+                                                        text="Delete"/>
+                                            </children>
+                                        </HBox>
+                                    </HBox>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+                                        <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                <children>
+                                                    <TableView fx:id="ratingInternalTable"
+                                                               AnchorPane.bottomAnchor="0.0"
+                                                               AnchorPane.leftAnchor="0.0"
+                                                               AnchorPane.rightAnchor="0.0"
+                                                               AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                            <TableColumn fx:id="irDateCol" maxWidth="90.0"
+                                                                         minWidth="90.0" prefWidth="90.0"
+                                                                         text="Date"/>
+                                                            <TableColumn fx:id="irRatingCol" maxWidth="60.0"
+                                                                         minWidth="60.0" prefWidth="60.0"
+                                                                         text="Rating"/>
+                                                            <TableColumn fx:id="irRWCCol" maxWidth="60.0"
+                                                                         minWidth="60.0" prefWidth="60.0"
+                                                                         text="RWC"/>
+                                                            <TableColumn fx:id="irClassCol" maxWidth="60.0"
+                                                                         minWidth="60.0" prefWidth="60.0"
+                                                                         text="Class"/>
+                                                            <TableColumn fx:id="irConservativeCol"
+                                                                         maxWidth="30.0" minWidth="30.0"
+                                                                         prefWidth="30.0" text="C"/>
+                                                            <TableColumn prefWidth="150.0"
+                                                                         text="Financial Statement">
+                                                                <columns>
+                                                                    <TableColumn fx:id="irFSDateCol"
+                                                                                 maxWidth="90.0"
+                                                                                 minWidth="90.0"
+                                                                                 prefWidth="90.0"
+                                                                                 text="Date"/>
+                                                                    <TableColumn fx:id="irFSStandardCol"
+                                                                                 prefWidth="75.0"
+                                                                                 text="Standard"/>
+                                                                </columns>
+                                                            </TableColumn>
+                                                            <TableColumn fx:id="irAnalystCol"
+                                                                         prefWidth="75.0" text="Analyst"/>
+                                                            <TableColumn fx:id="irCommentCol"
+                                                                         prefWidth="75.0" text="Comment"/>
+                                                        </columns>
+                                                        <columnResizePolicy>
+                                                            <TableView
+                                                                    fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                        </columnResizePolicy>
+                                                    </TableView>
+                                                </children>
+                                            </AnchorPane>
+                                        </content>
+                                    </ScrollPane>
+                                </children>
+                                <padding>
+                                    <Insets topRightBottomLeft="5"/>
+                                </padding>
+                            </VBox>
+                            <FlowPane style=" -fx-border-color:green; -fx-border-width: 1; -fx-border-style: solid;">
+                                <children>
+                                    <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                                        <children>
+                                            <HBox prefHeight="25" maxHeight="25" minHeight="25" spacing="5">
+                                                <Label maxHeight="Infinity" HBox.hgrow="ALWAYS" alignment="CENTER"
+                                                       contentDisplay="CENTER" maxWidth="Infinity"
+                                                       text="External Ratings"/>
+                                                <HBox alignment="BASELINE_RIGHT" spacing="5">
+                                                    <children>
+                                                        <Button fx:id="btnAddExternalRating"
+                                                                onAction="#addRatingExternal" text="Add"/>
+                                                        <Button fx:id="btnEditExternalRating"
+                                                                onAction="#editRatingExternal" text="Edit"/>
+                                                        <Button fx:id="btnDeleteExternalRating"
+                                                                onAction="#deleteRatingExternal" text="Delete"/>
+                                                    </children>
+                                                </HBox>
+                                            </HBox>
+                                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+                                                <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TableView fx:id="ratingExternalTable"
+                                                                       AnchorPane.bottomAnchor="0.0"
+                                                                       AnchorPane.leftAnchor="0.0"
+                                                                       AnchorPane.rightAnchor="0.0"
+                                                                       AnchorPane.topAnchor="0.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="erDateCol" prefWidth="75.0"
+                                                                                 text="Date"/>
+                                                                    <TableColumn fx:id="erAgencyCol"
+                                                                                 prefWidth="75.0" text="Agency"/>
+                                                                    <TableColumn fx:id="erRatingCol"
+                                                                                 prefWidth="75.0" text="Rating"/>
+                                                                </columns>
+                                                                <columnResizePolicy>
+                                                                    <TableView
+                                                                            fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                                </columnResizePolicy>
+                                                            </TableView>
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </ScrollPane>
+                                        </children>
+                                        <padding>
+                                            <Insets topRightBottomLeft="5"/>
+                                        </padding>
+                                    </VBox>
+                                    <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                                        <children>
+                                            <Label fx:id="countryRiskLabel" prefHeight="25" maxHeight="25"
+                                                   minHeight="25" alignment="CENTER" contentDisplay="CENTER"
+                                                   maxWidth="Infinity" text="Country of Risk"/>
+                                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+                                                <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TableView fx:id="crRatingTable"
+                                                                       AnchorPane.bottomAnchor="0.0"
+                                                                       AnchorPane.leftAnchor="0.0"
+                                                                       AnchorPane.rightAnchor="0.0"
+                                                                       AnchorPane.topAnchor="0.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="crDateCol" prefWidth="75.0"
+                                                                                 text="Date"/>
+                                                                    <TableColumn fx:id="crAgencyCol"
+                                                                                 prefWidth="75.0" text="Agency"/>
+                                                                    <TableColumn fx:id="crRatingCol"
+                                                                                 prefWidth="75.0" text="Rating"/>
+                                                                </columns>
+                                                                <columnResizePolicy>
+                                                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                                </columnResizePolicy>
+                                                            </TableView>
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </ScrollPane>
+                                        </children>
+                                        <padding>
+                                            <Insets topRightBottomLeft="5"/>
+                                        </padding>
+                                    </VBox>
+                                    <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                                        <children>
+                                            <Label fx:id="countryLabel" prefHeight="25" maxHeight="25" minHeight="25"
+                                                   alignment="CENTER" contentDisplay="CENTER" maxWidth="Infinity"
+                                                   text="Country of Domicile"/>
+                                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+                                                <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TableView fx:id="cdRatingTable"
+                                                                       AnchorPane.bottomAnchor="0.0"
+                                                                       AnchorPane.leftAnchor="0.0"
+                                                                       AnchorPane.rightAnchor="0.0"
+                                                                       AnchorPane.topAnchor="0.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="cdDateCol" prefWidth="75.0"
+                                                                                 text="Date"/>
+                                                                    <TableColumn fx:id="cdAgencyCol"
+                                                                                 prefWidth="75.0" text="Agency"/>
+                                                                    <TableColumn fx:id="cdRatingCol"
+                                                                                 prefWidth="75.0" text="Rating"/>
+                                                                </columns>
+                                                                <columnResizePolicy>
+                                                                    <TableView
+                                                                            fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                                </columnResizePolicy>
+                                                            </TableView>
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </ScrollPane>
+                                        </children>
+                                        <padding>
+                                            <Insets topRightBottomLeft="5"/>
+                                        </padding>
+                                    </VBox>
+                                    <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                                        <children>
+                                            <HBox prefHeight="25" maxHeight="25" minHeight="25" spacing="5">
+                                                <Label maxHeight="Infinity" HBox.hgrow="ALWAYS" alignment="CENTER"
+                                                       contentDisplay="CENTER" maxWidth="Infinity"
+                                                       text="Financial Statements"/>
+                                                <HBox alignment="BASELINE_RIGHT" spacing="5">
+                                                    <children>
+                                                        <Button onAction="#addFinancialStatement" text="Add"/>
+                                                        <Button onAction="#editFinancialStatement" text="Edit"/>
+                                                        <Button onAction="#deleteFinancialStatement" text="Delete"/>
+                                                    </children>
+                                                </HBox>
+                                            </HBox>
+                                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+                                                <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TableView fx:id="fsTable" AnchorPane.bottomAnchor="0.0"
+                                                                       AnchorPane.leftAnchor="0.0"
+                                                                       AnchorPane.rightAnchor="0.0"
+                                                                       AnchorPane.topAnchor="0.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="fsDateCol" prefWidth="75.0"
+                                                                                 text="Date"/>
+                                                                    <TableColumn fx:id="fsStandardCol"
+                                                                                 prefWidth="75.0" text="Standard"/>
+                                                                </columns>
+                                                                <columnResizePolicy>
+                                                                    <TableView
+                                                                            fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                                </columnResizePolicy>
+                                                            </TableView>
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </ScrollPane>
+                                        </children>
+                                        <padding>
+                                            <Insets topRightBottomLeft="5"/>
+                                        </padding>
+                                    </VBox>
+                                    <VBox maxHeight="200.0" prefWidth="605.0" spacing="5">
+                                        <children>
+                                            <HBox prefHeight="25" maxHeight="25" minHeight="25" spacing="5">
+                                                <Label maxHeight="Infinity" HBox.hgrow="ALWAYS" alignment="CENTER"
+                                                       contentDisplay="CENTER" maxWidth="Infinity" text="Committees"/>
+                                                <HBox alignment="BASELINE_RIGHT" spacing="5">
+                                                    <children>
+                                                        <Button onAction="#addCommittee" text="Add"/>
+                                                        <Button onAction="#editCommitte" text="Edit"/>
+                                                        <Button onAction="#deleteCommittee" text="Delete"/>
+                                                    </children>
+                                                </HBox>
+                                            </HBox>
+                                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+                                                <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TableView fx:id="committeeTable"
+                                                                       AnchorPane.bottomAnchor="0.0"
+                                                                       AnchorPane.leftAnchor="0.0"
+                                                                       AnchorPane.rightAnchor="0.0"
+                                                                       AnchorPane.topAnchor="0.0">
+                                                                <columns>
+                                                                    <TableColumn fx:id="committeeDateCol"
+                                                                                 prefWidth="75.0" text="Date"/>
+                                                                    <TableColumn fx:id="committeePortfolioCol"
+                                                                                 prefWidth="100.0"
+                                                                                 text="Portfolio"/>
+                                                                    <TableColumn fx:id="committeeStatusCol"
+                                                                                 prefWidth="81.0" text="Status"/>
+                                                                    <TableColumn fx:id="committeeLimitationCol"
+                                                                                 prefWidth="129.0"
+                                                                                 text="Limitations"/>
+                                                                    <TableColumn fx:id="committeeCommentCol"
+                                                                                 prefWidth="217.0" text="Comment"/>
+                                                                </columns>
+                                                                <columnResizePolicy>
+                                                                    <TableView
+                                                                            fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                                                </columnResizePolicy>
+                                                            </TableView>
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </ScrollPane>
+                                        </children>
+                                        <padding>
+                                            <Insets topRightBottomLeft="5"/>
+                                        </padding>
+                                    </VBox>
+                                </children>
+                            </FlowPane>
+                        </children>
+                    </VBox>
+                    <!--                    </AnchorPane>-->
+                </ScrollPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
