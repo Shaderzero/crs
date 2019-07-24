@@ -6,7 +6,7 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
         <!--        <property name="connection.url">jdbc:sqlserver://sql;databaseName=RM_ACCOUNTS;integratedSecurity=true</property>-->
-        <property name="connection.url">jdbc:sqlserver://sql;databaseName=RM_ACCOUNTS;integratedSecurity=true</property>
+        <property name="connection.url">jdbc:sqlserver://dbs;databaseName=RM_ACCOUNTS;integratedSecurity=true</property>
         <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 
         <!-- NOTE that after automapping with IDEA property username and password will delete -->
