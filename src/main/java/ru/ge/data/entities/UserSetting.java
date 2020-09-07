@@ -3,90 +3,90 @@ package ru.ge.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "UserSettings")
+@Table(name = "user_settings")
 public class UserSetting {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     public int id;
 
-    @Column(name = "Username", length = 255, nullable = false, unique = true)
+    @Column(name = "username", length = 255, nullable = false, unique = true)
     public String username;
 
-    @Column(name = "TableCounterpartyShowId")
-    public Boolean tableCounterpartyShowId;
+    @Column(name = "table_counterparty_show_id")
+    public Boolean table_counterparty_show_Id;
 
-    @Column(name = "TableCounterpartyShowShortName")
-    public Boolean tableCounterpartyShowShortName;
+    @Column(name = "table_counterparty_show_short_name")
+    public Boolean table_counterparty_show_ShortName;
 
-    @Column(name = "TableCounterpartyShowSector")
-    public Boolean tableCounterpartyShowSector;
+    @Column(name = "table_counterparty_show_sector")
+    public Boolean table_counterparty_show_Sector;
 
-    @Column(name = "TableCounterpartyShowCountryOfRisk")
-    public Boolean tableCounterpartyShowCountryOfRisk;
+    @Column(name = "table_counterparty_show_country_of_risk")
+    public Boolean table_counterparty_show_CountryOfRisk;
 
-    @Column(name = "TableCounterpartyShowCountryOfDomicile")
-    public Boolean tableCounterpartyShowCountryOfDomicile;
+    @Column(name = "table_counterparty_show_country_of_domicile")
+    public Boolean table_counterparty_show_CountryOfDomicile;
 
-    @Column(name = "TableCounterpartyShowIntraGroup")
-    public Boolean tableCounterpartyShowIntraGroup;
+    @Column(name = "table_counterparty_show_intra_group")
+    public Boolean table_counterparty_show_IntraGroup;
 
-    @Column(name = "TableCounterpartyShowPortfolio")
-    public Boolean tableCounterpartyShowPortfolio;
+    @Column(name = "table_counterparty_show_portfolio")
+    public Boolean table_counterparty_show_Portfolio;
 
-    @Column(name = "TableCounterpartyShowDonor")
-    public Boolean tableCounterpartyShowDonor;
+    @Column(name = "table_counterparty_show_donor")
+    public Boolean table_counterparty_show_Donor;
 
-    @Column(name = "TableCounterpartyShowStartDate")
-    public Boolean tableCounterpartyShowStartDate;
+    @Column(name = "table_counterparty_show_start_date")
+    public Boolean table_counterparty_show_StartDate;
 
-    @Column(name = "TableCounterpartyShowComment")
-    public Boolean tableCounterpartyShowComment;
+    @Column(name = "table_counterparty_show_comment")
+    public Boolean table_counterparty_show_Comment;
 
-    @Column(name = "TableCounterpartyShowINN")
-    public Boolean tableCounterpartyShowINN;
+    @Column(name = "table_counterparty_show_inn")
+    public Boolean table_counterparty_show_INN;
 
-    @Column(name = "TableCounterpartyShowSWIFT")
-    public Boolean tableCounterpartyShowSWIFT;
+    @Column(name = "table_counterparty_show_swift")
+    public Boolean table_counterparty_show_SWIFT;
 
-    @Column(name = "TableCounterpartyShowTicker")
-    public Boolean tableCounterpartyShowTicker;
+    @Column(name = "table_counterparty_show_ticker")
+    public Boolean table_counterparty_show_Ticker;
 
-    @Column(name = "TableCounterpartyShowLastIntRating")
-    public Boolean tableCounterpartyShowLastIntRating;
+    @Column(name = "table_counterparty_show_last_int_rating")
+    public Boolean table_counterparty_show_LastIntRating;
 
-    @Column(name = "TableCounterpartyShowLastExtRating")
-    public Boolean tableCounterpartyShowLastExtRating;
+    @Column(name = "table_counterparty_show_last_ext_rating")
+    public Boolean table_counterparty_show_LastExtRating;
 
-    @Column(name = "TableCounterpartyShowActiveRating")
-    public Boolean tableCounterpartyShowActiveRating;
+    @Column(name = "table_counterparty_show_active_rating")
+    public Boolean table_counterparty_show_ActiveRating;
 
-    @Column(name = "TableCounterpartyShowEffectiveRating")
-    public Boolean tableCounterpartyShowEffectiveRating;
+    @Column(name = "table_counterparty_show_effective_rating")
+    public Boolean table_counterparty_show_EffectiveRating;
 
     public UserSetting() {
     }
 
     public UserSetting(String username) {
         this.username = username;
-        this.tableCounterpartyShowId = true;
-        this.tableCounterpartyShowShortName = false;
-        this.tableCounterpartyShowSector = false;
-        this.tableCounterpartyShowCountryOfRisk = false;
-        this.tableCounterpartyShowCountryOfDomicile = false;
-        this.tableCounterpartyShowIntraGroup = false;
-        this.tableCounterpartyShowPortfolio = false;
-        this.tableCounterpartyShowDonor = false;
-        this.tableCounterpartyShowStartDate = false;
-        this.tableCounterpartyShowComment = false;
-        this.tableCounterpartyShowINN = false;
-        this.tableCounterpartyShowSWIFT = false;
-        this.tableCounterpartyShowTicker = false;
-        this.tableCounterpartyShowLastIntRating = false;
-        this.tableCounterpartyShowLastExtRating = false;
-        this.tableCounterpartyShowActiveRating = false;
-        this.tableCounterpartyShowEffectiveRating = false;
+        this.table_counterparty_show_Id = true;
+        this.table_counterparty_show_ShortName = false;
+        this.table_counterparty_show_Sector = false;
+        this.table_counterparty_show_CountryOfRisk = false;
+        this.table_counterparty_show_CountryOfDomicile = false;
+        this.table_counterparty_show_IntraGroup = false;
+        this.table_counterparty_show_Portfolio = false;
+        this.table_counterparty_show_Donor = false;
+        this.table_counterparty_show_StartDate = false;
+        this.table_counterparty_show_Comment = false;
+        this.table_counterparty_show_INN = false;
+        this.table_counterparty_show_SWIFT = false;
+        this.table_counterparty_show_Ticker = false;
+        this.table_counterparty_show_LastIntRating = false;
+        this.table_counterparty_show_LastExtRating = false;
+        this.table_counterparty_show_ActiveRating = false;
+        this.table_counterparty_show_EffectiveRating = false;
     }
 
     public int getId() {
@@ -105,140 +105,140 @@ public class UserSetting {
         this.username = username;
     }
 
-    public Boolean getTableCounterpartyShowId() {
-        return tableCounterpartyShowId;
+    public Boolean gettable_counterparty_show_Id() {
+        return table_counterparty_show_Id;
     }
 
-    public void setTableCounterpartyShowId(Boolean tableCounterpartyShowId) {
-        this.tableCounterpartyShowId = tableCounterpartyShowId;
+    public void settable_counterparty_show_Id(Boolean table_counterparty_show_Id) {
+        this.table_counterparty_show_Id = table_counterparty_show_Id;
     }
 
-    public Boolean getTableCounterpartyShowShortName() {
-        return tableCounterpartyShowShortName;
+    public Boolean gettable_counterparty_show_ShortName() {
+        return table_counterparty_show_ShortName;
     }
 
-    public void setTableCounterpartyShowShortName(Boolean tableCounterpartyShowShortName) {
-        this.tableCounterpartyShowShortName = tableCounterpartyShowShortName;
+    public void settable_counterparty_show_ShortName(Boolean table_counterparty_show_ShortName) {
+        this.table_counterparty_show_ShortName = table_counterparty_show_ShortName;
     }
 
-    public Boolean getTableCounterpartyShowSector() {
-        return tableCounterpartyShowSector;
+    public Boolean gettable_counterparty_show_Sector() {
+        return table_counterparty_show_Sector;
     }
 
-    public void setTableCounterpartyShowSector(Boolean tableCounterpartyShowSector) {
-        this.tableCounterpartyShowSector = tableCounterpartyShowSector;
+    public void settable_counterparty_show_Sector(Boolean table_counterparty_show_Sector) {
+        this.table_counterparty_show_Sector = table_counterparty_show_Sector;
     }
 
-    public Boolean getTableCounterpartyShowCountryOfRisk() {
-        return tableCounterpartyShowCountryOfRisk;
+    public Boolean gettable_counterparty_show_CountryOfRisk() {
+        return table_counterparty_show_CountryOfRisk;
     }
 
-    public void setTableCounterpartyShowCountryOfRisk(Boolean tableCounterpartyShowCountryOfRisk) {
-        this.tableCounterpartyShowCountryOfRisk = tableCounterpartyShowCountryOfRisk;
+    public void settable_counterparty_show_CountryOfRisk(Boolean table_counterparty_show_CountryOfRisk) {
+        this.table_counterparty_show_CountryOfRisk = table_counterparty_show_CountryOfRisk;
     }
 
-    public Boolean getTableCounterpartyShowCountryOfDomicile() {
-        return tableCounterpartyShowCountryOfDomicile;
+    public Boolean gettable_counterparty_show_CountryOfDomicile() {
+        return table_counterparty_show_CountryOfDomicile;
     }
 
-    public void setTableCounterpartyShowCountryOfDomicile(Boolean tableCounterpartyShowCountryOfDomicile) {
-        this.tableCounterpartyShowCountryOfDomicile = tableCounterpartyShowCountryOfDomicile;
+    public void settable_counterparty_show_CountryOfDomicile(Boolean table_counterparty_show_CountryOfDomicile) {
+        this.table_counterparty_show_CountryOfDomicile = table_counterparty_show_CountryOfDomicile;
     }
 
-    public Boolean getTableCounterpartyShowIntraGroup() {
-        return tableCounterpartyShowIntraGroup;
+    public Boolean gettable_counterparty_show_IntraGroup() {
+        return table_counterparty_show_IntraGroup;
     }
 
-    public void setTableCounterpartyShowIntraGroup(Boolean tableCounterpartyShowIntraGroup) {
-        this.tableCounterpartyShowIntraGroup = tableCounterpartyShowIntraGroup;
+    public void settable_counterparty_show_IntraGroup(Boolean table_counterparty_show_IntraGroup) {
+        this.table_counterparty_show_IntraGroup = table_counterparty_show_IntraGroup;
     }
 
-    public Boolean getTableCounterpartyShowPortfolio() {
-        return tableCounterpartyShowPortfolio;
+    public Boolean gettable_counterparty_show_Portfolio() {
+        return table_counterparty_show_Portfolio;
     }
 
-    public void setTableCounterpartyShowPortfolio(Boolean tableCounterpartyShowPortfolio) {
-        this.tableCounterpartyShowPortfolio = tableCounterpartyShowPortfolio;
+    public void settable_counterparty_show_Portfolio(Boolean table_counterparty_show_Portfolio) {
+        this.table_counterparty_show_Portfolio = table_counterparty_show_Portfolio;
     }
 
-    public Boolean getTableCounterpartyShowDonor() {
-        return tableCounterpartyShowDonor;
+    public Boolean gettable_counterparty_show_Donor() {
+        return table_counterparty_show_Donor;
     }
 
-    public void setTableCounterpartyShowDonor(Boolean tableCounterpartyShowDonor) {
-        this.tableCounterpartyShowDonor = tableCounterpartyShowDonor;
+    public void settable_counterparty_show_Donor(Boolean table_counterparty_show_Donor) {
+        this.table_counterparty_show_Donor = table_counterparty_show_Donor;
     }
 
-    public Boolean getTableCounterpartyShowStartDate() {
-        return tableCounterpartyShowStartDate;
+    public Boolean gettable_counterparty_show_StartDate() {
+        return table_counterparty_show_StartDate;
     }
 
-    public void setTableCounterpartyShowStartDate(Boolean tableCounterpartyShowStartDate) {
-        this.tableCounterpartyShowStartDate = tableCounterpartyShowStartDate;
+    public void settable_counterparty_show_StartDate(Boolean table_counterparty_show_StartDate) {
+        this.table_counterparty_show_StartDate = table_counterparty_show_StartDate;
     }
 
-    public Boolean getTableCounterpartyShowComment() {
-        return tableCounterpartyShowComment;
+    public Boolean gettable_counterparty_show_Comment() {
+        return table_counterparty_show_Comment;
     }
 
-    public void setTableCounterpartyShowComment(Boolean tableCounterpartyShowComment) {
-        this.tableCounterpartyShowComment = tableCounterpartyShowComment;
+    public void settable_counterparty_show_Comment(Boolean table_counterparty_show_Comment) {
+        this.table_counterparty_show_Comment = table_counterparty_show_Comment;
     }
 
-    public Boolean getTableCounterpartyShowINN() {
-        return tableCounterpartyShowINN;
+    public Boolean gettable_counterparty_show_INN() {
+        return table_counterparty_show_INN;
     }
 
-    public void setTableCounterpartyShowINN(Boolean tableCounterpartyShowINN) {
-        this.tableCounterpartyShowINN = tableCounterpartyShowINN;
+    public void settable_counterparty_show_INN(Boolean table_counterparty_show_INN) {
+        this.table_counterparty_show_INN = table_counterparty_show_INN;
     }
 
-    public Boolean getTableCounterpartyShowSWIFT() {
-        return tableCounterpartyShowSWIFT;
+    public Boolean gettable_counterparty_show_SWIFT() {
+        return table_counterparty_show_SWIFT;
     }
 
-    public void setTableCounterpartyShowSWIFT(Boolean tableCounterpartyShowSWIFT) {
-        this.tableCounterpartyShowSWIFT = tableCounterpartyShowSWIFT;
+    public void settable_counterparty_show_SWIFT(Boolean table_counterparty_show_SWIFT) {
+        this.table_counterparty_show_SWIFT = table_counterparty_show_SWIFT;
     }
 
-    public Boolean getTableCounterpartyShowTicker() {
-        return tableCounterpartyShowTicker;
+    public Boolean gettable_counterparty_show_Ticker() {
+        return table_counterparty_show_Ticker;
     }
 
-    public void setTableCounterpartyShowTicker(Boolean tableCounterpartyShowTicker) {
-        this.tableCounterpartyShowTicker = tableCounterpartyShowTicker;
+    public void settable_counterparty_show_Ticker(Boolean table_counterparty_show_Ticker) {
+        this.table_counterparty_show_Ticker = table_counterparty_show_Ticker;
     }
 
-    public Boolean getTableCounterpartyShowLastIntRating() {
-        return tableCounterpartyShowLastIntRating;
+    public Boolean gettable_counterparty_show_LastIntRating() {
+        return table_counterparty_show_LastIntRating;
     }
 
-    public void setTableCounterpartyShowLastIntRating(Boolean tableCounterpartyShowLastIntRating) {
-        this.tableCounterpartyShowLastIntRating = tableCounterpartyShowLastIntRating;
+    public void settable_counterparty_show_LastIntRating(Boolean table_counterparty_show_LastIntRating) {
+        this.table_counterparty_show_LastIntRating = table_counterparty_show_LastIntRating;
     }
 
-    public Boolean getTableCounterpartyShowLastExtRating() {
-        return tableCounterpartyShowLastExtRating;
+    public Boolean gettable_counterparty_show_LastExtRating() {
+        return table_counterparty_show_LastExtRating;
     }
 
-    public void setTableCounterpartyShowLastExtRating(Boolean tableCounterpartyShowLastExtRating) {
-        this.tableCounterpartyShowLastExtRating = tableCounterpartyShowLastExtRating;
+    public void settable_counterparty_show_LastExtRating(Boolean table_counterparty_show_LastExtRating) {
+        this.table_counterparty_show_LastExtRating = table_counterparty_show_LastExtRating;
     }
 
-    public Boolean getTableCounterpartyShowActiveRating() {
-        return tableCounterpartyShowActiveRating;
+    public Boolean gettable_counterparty_show_ActiveRating() {
+        return table_counterparty_show_ActiveRating;
     }
 
-    public void setTableCounterpartyShowActiveRating(Boolean tableCounterpartyShowActiveRating) {
-        this.tableCounterpartyShowActiveRating = tableCounterpartyShowActiveRating;
+    public void settable_counterparty_show_ActiveRating(Boolean table_counterparty_show_ActiveRating) {
+        this.table_counterparty_show_ActiveRating = table_counterparty_show_ActiveRating;
     }
 
-    public Boolean getTableCounterpartyShowEffectiveRating() {
-        return tableCounterpartyShowEffectiveRating;
+    public Boolean gettable_counterparty_show_EffectiveRating() {
+        return table_counterparty_show_EffectiveRating;
     }
 
-    public void setTableCounterpartyShowEffectiveRating(Boolean tableCounterpartyShowEffectiveRating) {
-        this.tableCounterpartyShowEffectiveRating = tableCounterpartyShowEffectiveRating;
+    public void settable_counterparty_show_EffectiveRating(Boolean table_counterparty_show_EffectiveRating) {
+        this.table_counterparty_show_EffectiveRating = table_counterparty_show_EffectiveRating;
     }
 
     @Override
@@ -250,62 +250,62 @@ public class UserSetting {
 
         if (id != that.id) return false;
         if (username != null ? !username.equals(that.username) : that.username != null) return false;
-        if (tableCounterpartyShowId != null ? !tableCounterpartyShowId.equals(that.tableCounterpartyShowId) : that.tableCounterpartyShowId != null)
+        if (table_counterparty_show_Id != null ? !table_counterparty_show_Id.equals(that.table_counterparty_show_Id) : that.table_counterparty_show_Id != null)
             return false;
-        if (tableCounterpartyShowShortName != null ? !tableCounterpartyShowShortName.equals(that.tableCounterpartyShowShortName) : that.tableCounterpartyShowShortName != null)
+        if (table_counterparty_show_ShortName != null ? !table_counterparty_show_ShortName.equals(that.table_counterparty_show_ShortName) : that.table_counterparty_show_ShortName != null)
             return false;
-        if (tableCounterpartyShowSector != null ? !tableCounterpartyShowSector.equals(that.tableCounterpartyShowSector) : that.tableCounterpartyShowSector != null)
+        if (table_counterparty_show_Sector != null ? !table_counterparty_show_Sector.equals(that.table_counterparty_show_Sector) : that.table_counterparty_show_Sector != null)
             return false;
-        if (tableCounterpartyShowCountryOfRisk != null ? !tableCounterpartyShowCountryOfRisk.equals(that.tableCounterpartyShowCountryOfRisk) : that.tableCounterpartyShowCountryOfRisk != null)
+        if (table_counterparty_show_CountryOfRisk != null ? !table_counterparty_show_CountryOfRisk.equals(that.table_counterparty_show_CountryOfRisk) : that.table_counterparty_show_CountryOfRisk != null)
             return false;
-        if (tableCounterpartyShowCountryOfDomicile != null ? !tableCounterpartyShowCountryOfDomicile.equals(that.tableCounterpartyShowCountryOfDomicile) : that.tableCounterpartyShowCountryOfDomicile != null)
+        if (table_counterparty_show_CountryOfDomicile != null ? !table_counterparty_show_CountryOfDomicile.equals(that.table_counterparty_show_CountryOfDomicile) : that.table_counterparty_show_CountryOfDomicile != null)
             return false;
-        if (tableCounterpartyShowIntraGroup != null ? !tableCounterpartyShowIntraGroup.equals(that.tableCounterpartyShowIntraGroup) : that.tableCounterpartyShowIntraGroup != null)
+        if (table_counterparty_show_IntraGroup != null ? !table_counterparty_show_IntraGroup.equals(that.table_counterparty_show_IntraGroup) : that.table_counterparty_show_IntraGroup != null)
             return false;
-        if (tableCounterpartyShowPortfolio != null ? !tableCounterpartyShowPortfolio.equals(that.tableCounterpartyShowPortfolio) : that.tableCounterpartyShowPortfolio != null)
+        if (table_counterparty_show_Portfolio != null ? !table_counterparty_show_Portfolio.equals(that.table_counterparty_show_Portfolio) : that.table_counterparty_show_Portfolio != null)
             return false;
-        if (tableCounterpartyShowDonor != null ? !tableCounterpartyShowDonor.equals(that.tableCounterpartyShowDonor) : that.tableCounterpartyShowDonor != null)
+        if (table_counterparty_show_Donor != null ? !table_counterparty_show_Donor.equals(that.table_counterparty_show_Donor) : that.table_counterparty_show_Donor != null)
             return false;
-        if (tableCounterpartyShowStartDate != null ? !tableCounterpartyShowStartDate.equals(that.tableCounterpartyShowStartDate) : that.tableCounterpartyShowStartDate != null)
+        if (table_counterparty_show_StartDate != null ? !table_counterparty_show_StartDate.equals(that.table_counterparty_show_StartDate) : that.table_counterparty_show_StartDate != null)
             return false;
-        if (tableCounterpartyShowComment != null ? !tableCounterpartyShowComment.equals(that.tableCounterpartyShowComment) : that.tableCounterpartyShowComment != null)
+        if (table_counterparty_show_Comment != null ? !table_counterparty_show_Comment.equals(that.table_counterparty_show_Comment) : that.table_counterparty_show_Comment != null)
             return false;
-        if (tableCounterpartyShowINN != null ? !tableCounterpartyShowINN.equals(that.tableCounterpartyShowINN) : that.tableCounterpartyShowINN != null)
+        if (table_counterparty_show_INN != null ? !table_counterparty_show_INN.equals(that.table_counterparty_show_INN) : that.table_counterparty_show_INN != null)
             return false;
-        if (tableCounterpartyShowSWIFT != null ? !tableCounterpartyShowSWIFT.equals(that.tableCounterpartyShowSWIFT) : that.tableCounterpartyShowSWIFT != null)
+        if (table_counterparty_show_SWIFT != null ? !table_counterparty_show_SWIFT.equals(that.table_counterparty_show_SWIFT) : that.table_counterparty_show_SWIFT != null)
             return false;
-        if (tableCounterpartyShowTicker != null ? !tableCounterpartyShowTicker.equals(that.tableCounterpartyShowTicker) : that.tableCounterpartyShowTicker != null)
+        if (table_counterparty_show_Ticker != null ? !table_counterparty_show_Ticker.equals(that.table_counterparty_show_Ticker) : that.table_counterparty_show_Ticker != null)
             return false;
-        if (tableCounterpartyShowLastIntRating != null ? !tableCounterpartyShowLastIntRating.equals(that.tableCounterpartyShowLastIntRating) : that.tableCounterpartyShowLastIntRating != null)
+        if (table_counterparty_show_LastIntRating != null ? !table_counterparty_show_LastIntRating.equals(that.table_counterparty_show_LastIntRating) : that.table_counterparty_show_LastIntRating != null)
             return false;
-        if (tableCounterpartyShowLastExtRating != null ? !tableCounterpartyShowLastExtRating.equals(that.tableCounterpartyShowLastExtRating) : that.tableCounterpartyShowLastExtRating != null)
+        if (table_counterparty_show_LastExtRating != null ? !table_counterparty_show_LastExtRating.equals(that.table_counterparty_show_LastExtRating) : that.table_counterparty_show_LastExtRating != null)
             return false;
-        if (tableCounterpartyShowActiveRating != null ? !tableCounterpartyShowActiveRating.equals(that.tableCounterpartyShowActiveRating) : that.tableCounterpartyShowActiveRating != null)
+        if (table_counterparty_show_ActiveRating != null ? !table_counterparty_show_ActiveRating.equals(that.table_counterparty_show_ActiveRating) : that.table_counterparty_show_ActiveRating != null)
             return false;
-        return tableCounterpartyShowEffectiveRating != null ? tableCounterpartyShowEffectiveRating.equals(that.tableCounterpartyShowEffectiveRating) : that.tableCounterpartyShowEffectiveRating == null;
+        return table_counterparty_show_EffectiveRating != null ? table_counterparty_show_EffectiveRating.equals(that.table_counterparty_show_EffectiveRating) : that.table_counterparty_show_EffectiveRating == null;
     }
 
     @Override
     public int hashCode() {
         int result = id;
         result = 31 * result + (username != null ? username.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowId != null ? tableCounterpartyShowId.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowShortName != null ? tableCounterpartyShowShortName.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowSector != null ? tableCounterpartyShowSector.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowCountryOfRisk != null ? tableCounterpartyShowCountryOfRisk.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowCountryOfDomicile != null ? tableCounterpartyShowCountryOfDomicile.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowIntraGroup != null ? tableCounterpartyShowIntraGroup.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowPortfolio != null ? tableCounterpartyShowPortfolio.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowDonor != null ? tableCounterpartyShowDonor.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowStartDate != null ? tableCounterpartyShowStartDate.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowComment != null ? tableCounterpartyShowComment.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowINN != null ? tableCounterpartyShowINN.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowSWIFT != null ? tableCounterpartyShowSWIFT.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowTicker != null ? tableCounterpartyShowTicker.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowLastIntRating != null ? tableCounterpartyShowLastIntRating.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowLastExtRating != null ? tableCounterpartyShowLastExtRating.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowActiveRating != null ? tableCounterpartyShowActiveRating.hashCode() : 0);
-        result = 31 * result + (tableCounterpartyShowEffectiveRating != null ? tableCounterpartyShowEffectiveRating.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_Id != null ? table_counterparty_show_Id.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_ShortName != null ? table_counterparty_show_ShortName.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_Sector != null ? table_counterparty_show_Sector.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_CountryOfRisk != null ? table_counterparty_show_CountryOfRisk.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_CountryOfDomicile != null ? table_counterparty_show_CountryOfDomicile.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_IntraGroup != null ? table_counterparty_show_IntraGroup.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_Portfolio != null ? table_counterparty_show_Portfolio.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_Donor != null ? table_counterparty_show_Donor.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_StartDate != null ? table_counterparty_show_StartDate.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_Comment != null ? table_counterparty_show_Comment.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_INN != null ? table_counterparty_show_INN.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_SWIFT != null ? table_counterparty_show_SWIFT.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_Ticker != null ? table_counterparty_show_Ticker.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_LastIntRating != null ? table_counterparty_show_LastIntRating.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_LastExtRating != null ? table_counterparty_show_LastExtRating.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_ActiveRating != null ? table_counterparty_show_ActiveRating.hashCode() : 0);
+        result = 31 * result + (table_counterparty_show_EffectiveRating != null ? table_counterparty_show_EffectiveRating.hashCode() : 0);
         return result;
     }
 
@@ -314,23 +314,23 @@ public class UserSetting {
         return "UserSetting{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", tableCounterpartyShowId=" + tableCounterpartyShowId +
-                ", tableCounterpartyShowShortName=" + tableCounterpartyShowShortName +
-                ", tableCounterpartyShowSector=" + tableCounterpartyShowSector +
-                ", tableCounterpartyShowCountryOfRisk=" + tableCounterpartyShowCountryOfRisk +
-                ", tableCounterpartyShowCountryOfDomicile=" + tableCounterpartyShowCountryOfDomicile +
-                ", tableCounterpartyShowIntraGroup=" + tableCounterpartyShowIntraGroup +
-                ", tableCounterpartyShowPortfolio=" + tableCounterpartyShowPortfolio +
-                ", tableCounterpartyShowDonor=" + tableCounterpartyShowDonor +
-                ", tableCounterpartyShowStartDate=" + tableCounterpartyShowStartDate +
-                ", tableCounterpartyShowComment=" + tableCounterpartyShowComment +
-                ", tableCounterpartyShowINN=" + tableCounterpartyShowINN +
-                ", tableCounterpartyShowSWIFT=" + tableCounterpartyShowSWIFT +
-                ", tableCounterpartyShowTicker=" + tableCounterpartyShowTicker +
-                ", tableCounterpartyShowLastIntRating=" + tableCounterpartyShowLastIntRating +
-                ", tableCounterpartyShowLastExtRating=" + tableCounterpartyShowLastExtRating +
-                ", tableCounterpartyShowActiveRating=" + tableCounterpartyShowActiveRating +
-                ", tableCounterpartyShowEffectiveRating=" + tableCounterpartyShowEffectiveRating +
+                ", table_counterparty_show_Id=" + table_counterparty_show_Id +
+                ", table_counterparty_show_ShortName=" + table_counterparty_show_ShortName +
+                ", table_counterparty_show_Sector=" + table_counterparty_show_Sector +
+                ", table_counterparty_show_CountryOfRisk=" + table_counterparty_show_CountryOfRisk +
+                ", table_counterparty_show_CountryOfDomicile=" + table_counterparty_show_CountryOfDomicile +
+                ", table_counterparty_show_IntraGroup=" + table_counterparty_show_IntraGroup +
+                ", table_counterparty_show_Portfolio=" + table_counterparty_show_Portfolio +
+                ", table_counterparty_show_Donor=" + table_counterparty_show_Donor +
+                ", table_counterparty_show_StartDate=" + table_counterparty_show_StartDate +
+                ", table_counterparty_show_Comment=" + table_counterparty_show_Comment +
+                ", table_counterparty_show_INN=" + table_counterparty_show_INN +
+                ", table_counterparty_show_SWIFT=" + table_counterparty_show_SWIFT +
+                ", table_counterparty_show_Ticker=" + table_counterparty_show_Ticker +
+                ", table_counterparty_show_LastIntRating=" + table_counterparty_show_LastIntRating +
+                ", table_counterparty_show_LastExtRating=" + table_counterparty_show_LastExtRating +
+                ", table_counterparty_show_ActiveRating=" + table_counterparty_show_ActiveRating +
+                ", table_counterparty_show_EffectiveRating=" + table_counterparty_show_EffectiveRating +
                 '}';
     }
 }

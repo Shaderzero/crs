@@ -5,33 +5,33 @@ import java.time.LocalDate;
 
 @Entity
 @Table(
-        name = "RatingExternals",
+        name = "rating_externals",
         uniqueConstraints = {@UniqueConstraint(columnNames = {
-                "DateStart",
-                "Counterparty_id",
-                "RatingAgency_id"
+                "date_start",
+                "counterparty_id",
+                "rating_agency_id"
         })}
 )
 public class RatingExternal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "DateStart", nullable = false)
+    @Column(name = "date_start", nullable = false)
     private LocalDate dateStart;
 
     @ManyToOne
-    @JoinColumn(name = "Counterparty_id", referencedColumnName = "Id", nullable = false)
+    @JoinColumn(name = "counterparty_id", referencedColumnName = "id", nullable = false)
     private Counterparty counterparty;
 
     @ManyToOne
-    @JoinColumn(name = "RatingAgency_id", referencedColumnName = "Id", nullable = false)
+    @JoinColumn(name = "rating_agency_id", referencedColumnName = "id", nullable = false)
     private RatingAgency ratingAgency;
 
     @ManyToOne
-    @JoinColumn(name = "Rating_id", referencedColumnName = "Id", nullable = false)
+    @JoinColumn(name = "rating_Id", referencedColumnName = "id", nullable = false)
     private Rating rating;
 
     public int getId() {
@@ -70,8 +70,8 @@ public class RatingExternal {
         return rating;
     }
 
-    public void setRating(Rating ratingValue) {
-        this.rating = ratingValue;
+    public void setRating(Rating ratingValueP) {
+        this.rating = ratingValueP;
     }
 
     @Override

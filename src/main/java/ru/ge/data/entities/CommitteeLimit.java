@@ -3,15 +3,15 @@ package ru.ge.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "CommitteeLimits")
+@Table(name = "committee_limits")
 public class CommitteeLimit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, length = 100, unique = true)
+    @Column(name = "name", nullable = false, length = 100, unique = true)
     private String name;
 
     public int getId() {

@@ -5,24 +5,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Countries")
+@Table(name = "countries")
 public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, length = 100, unique = true)
+    @Column(name = "name", nullable = false, length = 100, unique = true)
     private String name;
 
-    @Column(name = "NameRu", nullable = false, length = 100, unique = true)
+    @Column(name = "name_ru", nullable = false, length = 100, unique = true)
     private String nameRu;
 
-    @Column(name = "ShortName", nullable = false, length = 2, unique = true)
+    @Column(name = "short_name", nullable = false, length = 2, unique = true)
     private String shortName;
 
-    @Column(name = "Ticker", length = 20)
+    @Column(name = "ticker", length = 20)
     private String ticker;
 
     @OneToMany(mappedBy = "country", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)

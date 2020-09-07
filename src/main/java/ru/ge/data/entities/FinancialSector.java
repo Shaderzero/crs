@@ -3,18 +3,18 @@ package ru.ge.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "FinancialSectors")
+@Table(name = "financial_sectors")
 public class FinancialSector {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, length = 50, unique = true)
+    @Column(name = "name", nullable = false, length = 50, unique = true)
     private String name;
 
-    @Column(name = "NameRu", nullable = false, length = 50, unique = true)
+    @Column(name = "name_ru", nullable = false, length = 50, unique = true)
     private String nameRu;
 
     public int getId() {

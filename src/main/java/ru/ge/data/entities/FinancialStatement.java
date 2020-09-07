@@ -6,26 +6,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "FinancialStatements")
+@Table(name = "financial_statements")
 public class FinancialStatement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "DateStart", nullable = false)
+    @Column(name = "date_start", nullable = false)
     private LocalDate dateStart;
 
-    @Column(name = "Comment", length = 1000)
+    @Column(name = "comment", length = 1000)
     private String comment;
 
     @ManyToOne
-    @JoinColumn(name = "Counterparty_id", referencedColumnName = "Id")
+    @JoinColumn(name = "counterparty_id", referencedColumnName = "id")
     private Counterparty counterparty;
 
     @ManyToOne
-    @JoinColumn(name = "Standard_id", referencedColumnName = "Id")
+    @JoinColumn(name = "standard_id", referencedColumnName = "id")
     private FinancialStatementStandard financialStatementStandard;
 
     @OneToMany(mappedBy = "financialStatement", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)

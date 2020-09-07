@@ -4,30 +4,30 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Committees")
+@Table(name = "committees")
 public class Committee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "DateStart", nullable = false)
+    @Column(name = "date_start", nullable = false)
     private LocalDate dateStart;
 
-    @Column(name = "Comment", length = 1000)
+    @Column(name = "comment", length = 1000)
     private String comment;
 
     @ManyToOne
-    @JoinColumn(name = "Counterparty_id", referencedColumnName = "Id")
+    @JoinColumn(name = "counterparty_id", referencedColumnName = "id")
     private Counterparty counterparty;
 
     @ManyToOne
-    @JoinColumn(name = "CommitteeStatus_id", referencedColumnName = "Id")
+    @JoinColumn(name = "committee_status_id", referencedColumnName = "id")
     private CommitteeStatus committeeStatus;
 
     @ManyToOne
-    @JoinColumn(name = "CommitteeLimit_id", referencedColumnName = "Id")
+    @JoinColumn(name = "committee_limit_id", referencedColumnName = "id")
     private CommitteeLimit committeeLimit;
 
     @PreRemove
@@ -63,8 +63,8 @@ public class Committee {
         return counterparty;
     }
 
-    public void setCounterparty(Counterparty counterparty) {
-        this.counterparty = counterparty;
+    public void setCounterparty(Counterparty counterpartyP) {
+        this.counterparty = counterpartyP;
     }
 
     public CommitteeStatus getStatus() {

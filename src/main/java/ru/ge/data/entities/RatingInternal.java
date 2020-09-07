@@ -4,44 +4,44 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "RatingInternals")
+@Table(name = "rating_internals")
 public class RatingInternal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "DateStart", nullable = false)
+    @Column(name = "date_start", nullable = false)
     private LocalDate dateStart;
 
-    @Column(name = "Conservative", nullable = false, columnDefinition = "bit default 0")
+    @Column(name = "conservative", nullable = false, columnDefinition = "bit default 0")
     private boolean conservative;
 
-    @Column(name = "Analyst", nullable = false, length = 30)
+    @Column(name = "analyst", nullable = false, length = 30)
     private String analyst;
 
-    @Column(name = "Comment", length = 1000)
+    @Column(name = "comment", length = 1000)
     private String comment;
 
     @ManyToOne
-    @JoinColumn(name = "Rating_id", referencedColumnName = "Id")
+    @JoinColumn(name = "rating_id", referencedColumnName = "id")
     private Rating rating;
 
     @ManyToOne
-    @JoinColumn(name = "RatingWc_id", referencedColumnName = "Id")
+    @JoinColumn(name = "rating_wc_id", referencedColumnName = "id")
     private Rating ratingWc;
 
     @ManyToOne
-    @JoinColumn(name = "RiskClass_id", referencedColumnName = "Id")
+    @JoinColumn(name = "risk_class_id", referencedColumnName = "id")
     private RiskClass riskClass;
 
     @ManyToOne
-    @JoinColumn(name = "FinancialStatement_id", referencedColumnName = "Id")
+    @JoinColumn(name = "financial_statement_id", referencedColumnName = "id")
     private FinancialStatement financialStatement;
 
     @ManyToOne
-    @JoinColumn(name = "Counterparty_id", nullable = false, referencedColumnName = "Id")
+    @JoinColumn(name = "counterparty_id", nullable = false, referencedColumnName = "id")
 //    @OneToOne (mappedBy="ratingInternalList",  fetch = FetchType.LAZY)
     private Counterparty counterparty;
 
@@ -89,40 +89,40 @@ public class RatingInternal {
         return rating;
     }
 
-    public void setRating(Rating ratingValue) {
-        this.rating = ratingValue;
+    public void setRating(Rating ratingValueP) {
+        this.rating = ratingValueP;
     }
 
     public Rating getRatingWC() {
         return ratingWc;
     }
 
-    public void setRatingWc(Rating ratingValueWithoutCountry) {
-        this.ratingWc = ratingValueWithoutCountry;
+    public void setRatingWc(Rating ratingValueWithoutCountryP) {
+        this.ratingWc = ratingValueWithoutCountryP;
     }
 
     public RiskClass getRiskClass() {
         return riskClass;
     }
 
-    public void setRiskClass(RiskClass riskClass) {
-        this.riskClass = riskClass;
+    public void setRiskClass(RiskClass riskClassP) {
+        this.riskClass = riskClassP;
     }
 
     public FinancialStatement getFinancialStatement() {
         return financialStatement;
     }
 
-    public void setFinancialStatement(FinancialStatement financialStatement) {
-        this.financialStatement = financialStatement;
+    public void setFinancialStatement(FinancialStatement financialStatementP) {
+        this.financialStatement = financialStatementP;
     }
 
     public Counterparty getCounterparty() {
         return counterparty;
     }
 
-    public void setCounterparty(Counterparty counterparty) {
-        this.counterparty = counterparty;
+    public void setCounterparty(Counterparty counterpartyP) {
+        this.counterparty = counterpartyP;
     }
 
     @Override

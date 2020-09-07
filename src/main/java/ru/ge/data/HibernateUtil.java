@@ -14,7 +14,7 @@ public class HibernateUtil {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration();
-                configuration.configure("crsbase.cfg.xml");
+                configuration.configure("crsPostgre.cfg.xml");
                 // Create SessionFactory
                 sessionFactory = configuration.buildSessionFactory();
             } catch (Exception e) {

@@ -4,37 +4,37 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "GuaranteeLimits")
+@Table(name = "guarantee_limits")
 public class GuaranteeLimit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "Guarantor_id", referencedColumnName = "Id")
+    @JoinColumn(name = "guarantor_id", referencedColumnName = "id")
     private Counterparty guarantor;
 
-    @Column(name = "DateAgreeStart", nullable = false)
+    @Column(name = "date_agree_start", nullable = false)
     private LocalDate dateAgreeStart;
 
-    @Column(name = "DateAgreeEnd")
+    @Column(name = "date_agree_end")
     private LocalDate dateAgreeEnd;
 
-    @Column(name = "DateEnd")
+    @Column(name = "date_end")
     private LocalDate dateEnd;
 
-    @Column(name = "Amount")
+    @Column(name = "amount")
     private long amount;
 
     @ManyToOne
-    @JoinColumn(name = "Currency_id", referencedColumnName = "Id")
-    private Currency currency;
+    @JoinColumn(name = "currency_id", referencedColumnName = "id")
+    private Currency currencyP;
 
     @ManyToOne
-    @JoinColumn(name = "GuaranteeType_id", referencedColumnName = "Id")
-    private GuaranteeType guaranteeType;
+    @JoinColumn(name = "guarantee_type_id", referencedColumnName = "id")
+    private GuaranteeType guaranteeTypeP;
 
     public int getId() {
         return id;
@@ -84,20 +84,20 @@ public class GuaranteeLimit {
         this.amount = amount;
     }
 
-    public Currency getCurrency() {
-        return currency;
+    public Currency getCurrencyP() {
+        return currencyP;
     }
 
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
+    public void setCurrencyP(Currency currencyP) {
+        this.currencyP = currencyP;
     }
 
-    public GuaranteeType getGuaranteeType() {
-        return guaranteeType;
+    public GuaranteeType getGuaranteeTypeP() {
+        return guaranteeTypeP;
     }
 
-    public void setGuaranteeType(GuaranteeType guaranteeType) {
-        this.guaranteeType = guaranteeType;
+    public void setGuaranteeTypeP(GuaranteeType guaranteeTypeP) {
+        this.guaranteeTypeP = guaranteeTypeP;
     }
 
     @Override
@@ -114,8 +114,8 @@ public class GuaranteeLimit {
             return false;
         if (dateAgreeEnd != null ? !dateAgreeEnd.equals(that.dateAgreeEnd) : that.dateAgreeEnd != null) return false;
         if (dateEnd != null ? !dateEnd.equals(that.dateEnd) : that.dateEnd != null) return false;
-        if (currency != null ? !currency.equals(that.currency) : that.currency != null) return false;
-        return guaranteeType != null ? guaranteeType.equals(that.guaranteeType) : that.guaranteeType == null;
+        if (currencyP != null ? !currencyP.equals(that.currencyP) : that.currencyP != null) return false;
+        return guaranteeTypeP != null ? guaranteeTypeP.equals(that.guaranteeTypeP) : that.guaranteeTypeP == null;
     }
 
     @Override
@@ -126,8 +126,8 @@ public class GuaranteeLimit {
         result = 31 * result + (dateAgreeEnd != null ? dateAgreeEnd.hashCode() : 0);
         result = 31 * result + (dateEnd != null ? dateEnd.hashCode() : 0);
         result = 31 * result + (int) (amount ^ (amount >>> 32));
-        result = 31 * result + (currency != null ? currency.hashCode() : 0);
-        result = 31 * result + (guaranteeType != null ? guaranteeType.hashCode() : 0);
+        result = 31 * result + (currencyP != null ? currencyP.hashCode() : 0);
+        result = 31 * result + (guaranteeTypeP != null ? guaranteeTypeP.hashCode() : 0);
         return result;
     }
 
@@ -140,8 +140,8 @@ public class GuaranteeLimit {
                 ", dateAgreeEnd=" + dateAgreeEnd +
                 ", dateEnd=" + dateEnd +
                 ", amount=" + amount +
-                ", currency=" + currency +
-                ", guaranteeType=" + guaranteeType +
+                ", currency=" + currencyP +
+                ", guaranteeType=" + guaranteeTypeP +
                 '}';
     }
 }

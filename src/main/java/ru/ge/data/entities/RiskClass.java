@@ -3,15 +3,15 @@ package ru.ge.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "RiskClasses")
+@Table(name = "risk_classes")
 public class RiskClass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, length = 5, unique = true)
+    @Column(name = "name", nullable = false, length = 5, unique = true)
     private String name;
 
     public int getId() {

@@ -1,11 +1,10 @@
 package ru.ge.gui;
 
 import org.hibernate.Session;
-import ru.ge.data.DbConverterCore;
+import ru.ge.data.DbConverterPostgre;
 import ru.ge.data.HibernateUtil;
 import ru.ge.data.HibernateUtil2;
 import ru.ge.data.entities2.*;
-import ru.ge.data.entitiesCore.HibernateUtilCore;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -201,60 +200,60 @@ public class MainGui extends JFrame {
 
     private void convert() {
         Session session = HibernateUtil2.getSession();
-        Session sessionCore = HibernateUtilCore.getSession();
+        Session sessionCore = HibernateUtil.getSession();
         String sql = "FROM " +
                 Currency2.class.getSimpleName();
         List<Currency2> currencyList = session.createQuery(sql, Currency2.class).getResultList();
         for (Currency2 x : currencyList) {
-            DbConverterCore.convertCurrency(x);
+            DbConverterPostgre.convertCurrency(x);
         }
         sessionCore.close();
 
-        sessionCore = HibernateUtilCore.getSession();
+        sessionCore = HibernateUtil.getSession();
         sql = "FROM " + Country2.class.getSimpleName();
         List<Country2> countryList = session.createQuery(sql, Country2.class).getResultList();
         for (Country2 x : countryList) {
-            DbConverterCore.convertCountry(x);
+            DbConverterPostgre.convertCountry(x);
         }
         sessionCore.close();
 
-        sessionCore = HibernateUtilCore.getSession();
+        sessionCore = HibernateUtil.getSession();
         sql = "FROM " + Counterparty2.class.getSimpleName();
         List<Counterparty2> counterpartyList = session.createQuery(sql, Counterparty2.class).getResultList();
         for (Counterparty2 x : counterpartyList) {
-            DbConverterCore.convertCounterparty(x);
+            DbConverterPostgre.convertCounterparty(x);
         }
         sessionCore.close();
 
-        sessionCore = HibernateUtilCore.getSession();
+        sessionCore = HibernateUtil.getSession();
         sql = "FROM " + CommitteeLimit2.class.getSimpleName();
         List<CommitteeLimit2> committeeLimitList = session.createQuery(sql, CommitteeLimit2.class).getResultList();
         for (CommitteeLimit2 x : committeeLimitList) {
-            DbConverterCore.convertCommitteeLimit(x);
+            DbConverterPostgre.convertCommitteeLimit(x);
         }
         sessionCore.close();
 
-        sessionCore = HibernateUtilCore.getSession();
+        sessionCore = HibernateUtil.getSession();
         sql = "FROM " + Committee2.class.getSimpleName();
         List<Committee2> committeeList = session.createQuery(sql, Committee2.class).getResultList();
         for (Committee2 x : committeeList) {
-            DbConverterCore.convertCommittee(x);
+            DbConverterPostgre.convertCommittee(x);
         }
         sessionCore.close();
 
-        sessionCore = HibernateUtilCore.getSession();
+        sessionCore = HibernateUtil.getSession();
         sql = "FROM " + RatingCounterpartyExt2.class.getSimpleName();
         List<RatingCounterpartyExt2> ratingExternalList = session.createQuery(sql, RatingCounterpartyExt2.class).getResultList();
         for (RatingCounterpartyExt2 x : ratingExternalList) {
-            DbConverterCore.convertExternalRating(x);
+            DbConverterPostgre.convertExternalRating(x);
         }
         sessionCore.close();
 
-        sessionCore = HibernateUtilCore.getSession();
+        sessionCore = HibernateUtil.getSession();
         sql = "FROM " + RatingCounterpartyInt2.class.getSimpleName();
         List<RatingCounterpartyInt2> ratingInternalList = session.createQuery(sql, RatingCounterpartyInt2.class).getResultList();
         for (RatingCounterpartyInt2 x : ratingInternalList) {
-            DbConverterCore.convertInternalRating(x);
+            DbConverterPostgre.convertInternalRating(x);
         }
         sessionCore.close();
 

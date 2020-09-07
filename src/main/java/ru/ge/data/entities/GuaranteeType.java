@@ -3,15 +3,15 @@ package ru.ge.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "GuaranteeTypes")
+@Table(name = "guarantee_types")
 public class GuaranteeType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, length = 100, unique = true)
+    @Column(name = "name", nullable = false, length = 100, unique = true)
     private String name;
 
     public int getId() {
@@ -50,9 +50,6 @@ public class GuaranteeType {
 
     @Override
     public String toString() {
-        return "GuaranteeType{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        return name;
     }
 }

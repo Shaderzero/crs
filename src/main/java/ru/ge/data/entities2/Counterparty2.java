@@ -48,6 +48,18 @@ public class Counterparty2 {
     @Column(name = "ToBeMonitored", nullable = false)
     private boolean isMonitored;
 
+    @Column(name = "Longterm", nullable = false)
+    private Boolean isLongTerm;
+
+    @Column(name = "Etp", nullable = false)
+    private Boolean isETP;
+
+    @Column(name = "Efet", nullable = false)
+    private Boolean isEFET;
+
+    @Column(name = "Gtc")
+    private String gtc;
+
     @ManyToOne
     @JoinColumn(name = "PortfolioID", referencedColumnName = "Id")
     private Portfolio2 portfolio;
@@ -170,6 +182,38 @@ public class Counterparty2 {
         this.ratingDonor = ratingDonor;
     }
 
+    public Boolean isLongTerm() {
+        return isLongTerm;
+    }
+
+    public void setLongTerm(Boolean longTerm) {
+        isLongTerm = longTerm;
+    }
+
+    public Boolean isETP() {
+        return isETP;
+    }
+
+    public void setETP(Boolean ETP) {
+        isETP = ETP;
+    }
+
+    public Boolean isEFET() {
+        return isEFET;
+    }
+
+    public void setEFET(Boolean EFET) {
+        isEFET = EFET;
+    }
+
+    public String getGtc() {
+        return gtc;
+    }
+
+    public void setGtc(String gtc) {
+        this.gtc = gtc;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -189,6 +233,10 @@ public class Counterparty2 {
         if (!countryDomicile.equals(that.countryDomicile)) return false;
         if (!countryRisk.equals(that.countryRisk)) return false;
         if (!startDate.equals(that.startDate)) return false;
+        if (isLongTerm != that.isLongTerm) return false;
+        if (isETP != that.isETP) return false;
+        if (isEFET != that.isEFET) return false;
+        if (!gtc.equals(that.gtc)) return false;
         if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;
         return portfolio != null ? portfolio.equals(that.portfolio) : that.portfolio == null;
 
@@ -208,6 +256,10 @@ public class Counterparty2 {
         result = 31 * result + startDate.hashCode();
         result = 31 * result + (comment != null ? comment.hashCode() : 0);
         result = 31 * result + (isMonitored ? 1 : 0);
+        result = 31 * result + (isLongTerm ? 1 : 0);
+        result = 31 * result + (isETP ? 1 : 0);
+        result = 31 * result + (isEFET ? 1 : 0);
+        result = 31 * result + (gtc != null ? gtc.hashCode() : 0);
         result = 31 * result + (portfolio != null ? portfolio.hashCode() : 0);
         return result;
     }

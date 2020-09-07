@@ -1,0 +1,1 @@
+java --module-path /home/lostuser/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml -jar ./crs-1.0-SNAPSHOT.jar

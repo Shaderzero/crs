@@ -5,32 +5,32 @@ import java.time.LocalDate;
 
 @Entity
 @Table(
-        name = "CurrencyRates",
+        name = "currency_rates",
         uniqueConstraints = {@UniqueConstraint(columnNames = {
-                "CurrencyFrom_id",
-                "CurrencyTo_id",
-                "DateReport"
+                "currency_from_id",
+                "currency_to_id",
+                "date_report"
         })}
 )
 public class CurrencyRate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "CurrencyFrom_id", referencedColumnName = "Id")
+    @JoinColumn(name = "currency_from_id", referencedColumnName = "id")
     private Currency fromCurrency;
 
     @ManyToOne
-    @JoinColumn(name = "CurrencyTo_id", referencedColumnName = "Id")
+    @JoinColumn(name = "currency_to_id", referencedColumnName = "id")
     private Currency toCurrency;
 
-    @Column(name = "Rate")
+    @Column(name = "rate")
     private float rate;
 
-    @Column(name = "DateReport", nullable = false)
+    @Column(name = "date_report", nullable = false)
     private LocalDate dateReport;
 
     public int getId() {

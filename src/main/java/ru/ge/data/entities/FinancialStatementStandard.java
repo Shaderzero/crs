@@ -3,15 +3,15 @@ package ru.ge.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "FinancialStatementStandards")
+@Table(name = "financial_statement_standards")
 public class FinancialStatementStandard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", length = 100, unique = true, nullable = false)
+    @Column(name = "name", length = 100, unique = true, nullable = false)
     private String name;
 
     public int getId() {

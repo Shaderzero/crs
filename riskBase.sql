@@ -15,14 +15,14 @@ IF OBJECT_ID('Portfolios', 'U') IS NOT NULL DROP TABLE Portfolios;
 IF OBJECT_ID('Committees', 'U') IS NOT NULL DROP TABLE Committees;
 IF OBJECT_ID('CommitteeStatuses', 'U') IS NOT NULL DROP TABLE CommitteeStatuses;
 IF OBJECT_ID('CommitteeLimits', 'U') IS NOT NULL DROP TABLE CommitteeLimits;
-IF OBJECT_ID('RatingCounterpartyInts', 'U') IS NOT NULL DROP TABLE RatingCounterpartyInts; --delete
+--IF OBJECT_ID('RatingCounterpartyInts', 'U') IS NOT NULL DROP TABLE RatingCounterpartyInts; --delete
 IF OBJECT_ID('RatingInternals', 'U') IS NOT NULL DROP TABLE RatingInternals;
 IF OBJECT_ID('FinancialStatements', 'U') IS NOT NULL DROP TABLE FinancialStatements;
 IF OBJECT_ID('FinancialStatementStandards', 'U') IS NOT NULL DROP TABLE FinancialStatementStandards;
-IF OBJECT_ID('RatingCounterpartyExts', 'U') IS NOT NULL DROP TABLE RatingCounterpartyExts; --delete
+--IF OBJECT_ID('RatingCounterpartyExts', 'U') IS NOT NULL DROP TABLE RatingCounterpartyExts; --delete
 IF OBJECT_ID('RatingExternals', 'U') IS NOT NULL DROP TABLE RatingExternals;
 IF OBJECT_ID('Counterparties', 'U') IS NOT NULL DROP TABLE Counterparties;
-IF OBJECT_ID('CounterpartyAddons', 'U') IS NOT NULL DROP TABLE CounterpartyAddons; --delete
+--IF OBJECT_ID('CounterpartyAddons', 'U') IS NOT NULL DROP TABLE CounterpartyAddons; --delete
 IF OBJECT_ID('CounterpartyGroups', 'U') IS NOT NULL DROP TABLE CounterpartyGroups;
 IF OBJECT_ID('FinancialSectors', 'U') IS NOT NULL DROP TABLE FinancialSectors;
 IF OBJECT_ID('RatingCountries', 'U') IS NOT NULL DROP TABLE RatingCountries;
@@ -36,7 +36,6 @@ IF OBJECT_ID('RiskClasses', 'U') IS NOT NULL DROP TABLE RiskClasses;
 IF OBJECT_ID('CurrencyRates', 'U') IS NOT NULL DROP TABLE CurrencyRates;
 IF OBJECT_ID('Currencies', 'U') IS NOT NULL DROP TABLE Currencies;
 IF OBJECT_ID('UserSettings', 'U') IS NOT NULL DROP TABLE UserSettings;
--- гарантии
 
 -- Таблица дочерних компаний
 CREATE TABLE Subsidiaries (

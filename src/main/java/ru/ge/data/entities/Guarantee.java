@@ -6,51 +6,51 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Guarantees")
+@Table(name = "guarantees")
 public class Guarantee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "Counterparty_id", referencedColumnName = "Id")
+    @JoinColumn(name = "counterparty_id", referencedColumnName = "id")
     private Counterparty counterparty;
 
     @ManyToOne
-    @JoinColumn(name = "Guarantor_id", referencedColumnName = "Id")
+    @JoinColumn(name = "guarantor_id", referencedColumnName = "id")
     private Counterparty guarantor;
 
     @ManyToOne
-    @JoinColumn(name = "Beneficiar_id", referencedColumnName = "Id")
+    @JoinColumn(name = "beneficiar_id", referencedColumnName = "id")
     private Counterparty beneficiar;
 
     @ManyToOne
-    @JoinColumn(name = "Currency_id", referencedColumnName = "Id")
-    private Currency currency;
+    @JoinColumn(name = "currency_id", referencedColumnName = "id")
+    private Currency currencyP;
 
     @ManyToOne
-    @JoinColumn(name = "GuaranteeType_id", referencedColumnName = "Id")
+    @JoinColumn(name = "guarantee_type_id", referencedColumnName = "id")
     private GuaranteeType type;
 
-    @Column(name = "AmountInitial", nullable = false)
+    @Column(name = "amount_initial", nullable = false)
     private long amount;
 
-    @Column(name = "DateStart", nullable = false)
+    @Column(name = "date_start", nullable = false)
     private LocalDate dateStart;
 
-    @Column(name = "Number", length = 100)
+    @Column(name = "number", length = 100)
     private String number;
 
     @ManyToOne
-    @JoinColumn(name = "Subsidiary_id", referencedColumnName = "Id")
+    @JoinColumn(name = "subsidiary_id", referencedColumnName = "id")
     private Subsidiary subsidiary;
 
-    @Column(name = "Comment", length = 1000)
+    @Column(name = "comment", length = 1000)
     private String comment;
 
-    @OneToMany(mappedBy = "guarantee", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "guaranteeP", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderBy("dateReport desc")
     private List<GuaranteeReport> reportList = new ArrayList<>();
 
@@ -78,20 +78,20 @@ public class Guarantee {
         this.guarantor = guarantor;
     }
 
-    public Currency getCurrency() {
-        return currency;
+    public Currency getCurrencyP() {
+        return currencyP;
     }
 
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
+    public void setCurrencyP(Currency currencyP) {
+        this.currencyP = currencyP;
     }
 
     public GuaranteeType getType() {
         return type;
     }
 
-    public void setType(GuaranteeType guaranteeType) {
-        this.type = guaranteeType;
+    public void setType(GuaranteeType guaranteeTypeP) {
+        this.type = guaranteeTypeP;
     }
 
     public long getAmount() {
@@ -162,7 +162,7 @@ public class Guarantee {
         if (counterparty != null ? !counterparty.equals(guarantee.counterparty) : guarantee.counterparty != null)
             return false;
         if (guarantor != null ? !guarantor.equals(guarantee.guarantor) : guarantee.guarantor != null) return false;
-        if (currency != null ? !currency.equals(guarantee.currency) : guarantee.currency != null) return false;
+        if (currencyP != null ? !currencyP.equals(guarantee.currencyP) : guarantee.currencyP != null) return false;
         if (type != null ? !type.equals(guarantee.type) : guarantee.type != null)
             return false;
         if (dateStart != null ? !dateStart.equals(guarantee.dateStart) : guarantee.dateStart != null) return false;
@@ -177,7 +177,7 @@ public class Guarantee {
         int result = id;
         result = 31 * result + (counterparty != null ? counterparty.hashCode() : 0);
         result = 31 * result + (guarantor != null ? guarantor.hashCode() : 0);
-        result = 31 * result + (currency != null ? currency.hashCode() : 0);
+        result = 31 * result + (currencyP != null ? currencyP.hashCode() : 0);
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (int) (amount ^ (amount >>> 32));
         result = 31 * result + (dateStart != null ? dateStart.hashCode() : 0);
@@ -193,7 +193,7 @@ public class Guarantee {
                 "id=" + id +
                 ", counterparty=" + counterparty +
                 ", guarantor=" + guarantor +
-                ", currency=" + currency +
+                ", currency=" + currencyP +
                 ", guaranteeType=" + type +
                 ", amount=" + amount +
                 ", startDate=" + dateStart +

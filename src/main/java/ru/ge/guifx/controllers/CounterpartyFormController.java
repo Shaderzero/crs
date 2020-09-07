@@ -1,6 +1,5 @@
 package ru.ge.guifx.controllers;
 
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -13,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.hibernate.Session;
@@ -33,6 +33,20 @@ public class CounterpartyFormController {
     @FXML
     public TableView<RatingInternal> ratingInternalTable;
     public Counterparty entity;
+    @FXML
+    private ScrollPane scrollPane;
+    @FXML
+    private VBox pBox;
+    @FXML
+    private VBox pBox1;
+    @FXML
+    private VBox pBox2;
+    @FXML
+    private VBox pBox3;
+    @FXML
+    private VBox pBox4;
+    @FXML
+    private VBox pBox5;
     @FXML
     private TextField idField;
     @FXML
@@ -349,7 +363,62 @@ public class CounterpartyFormController {
     }
 
     private void addListeners() {
+        int targetHeight = 1000;
+        int targetWidth = 1000;
+        scrollPane.heightProperty().addListener((obs, oldVal, newVal) -> {
+            if (oldVal.intValue() < newVal.intValue()
+                    && oldVal.intValue() < targetHeight
+                    && scrollPane.getWidth() > targetWidth) {
+                flatView();
+                return;
+            }
+            if (oldVal.intValue() > newVal.intValue()
+                    && oldVal.intValue() >= targetHeight) {
+                slimView();
+            }
+        });
+        scrollPane.widthProperty().addListener((obs, oldVal, newVal) -> {
+            if (oldVal.intValue() < newVal.intValue() && oldVal.intValue() < targetWidth && scrollPane.getHeight() > targetHeight) {
+                flatView();
+                return;
+            }
+            if (oldVal.intValue() > newVal.intValue() && oldVal.intValue() >= targetWidth) {
+                slimView();
+            }
+        });
+    }
 
+    private void slimView() {
+        pBox.setMaxHeight(200);
+        pBox.setMinHeight(200);
+        pBox1.setMaxHeight(200);
+        pBox1.setMinHeight(200);
+        pBox2.setMaxHeight(200);
+        pBox2.setMinHeight(200);
+        pBox3.setMaxHeight(200);
+        pBox3.setMinHeight(200);
+        pBox4.setMaxHeight(200);
+        pBox4.setMinHeight(200);
+        pBox5.setMaxHeight(200);
+        pBox5.setMinHeight(200);
+        System.out.println("slim");
+    }
+
+    private void flatView() {
+        double targetHeight = scrollPane.getHeight() / 2 - 10;
+        pBox.setMaxHeight(targetHeight);
+        pBox.setMinHeight(targetHeight);
+        pBox1.setMaxHeight(targetHeight);
+        pBox1.setMinHeight(targetHeight);
+        pBox2.setMaxHeight(targetHeight);
+        pBox2.setMinHeight(targetHeight);
+        pBox3.setMaxHeight(targetHeight);
+        pBox3.setMinHeight(targetHeight);
+        pBox4.setMaxHeight(targetHeight);
+        pBox4.setMinHeight(targetHeight);
+        pBox5.setMaxHeight(targetHeight);
+        pBox5.setMinHeight(targetHeight);
+        System.out.println("flat");
     }
 
     @FXML
@@ -446,10 +515,10 @@ public class CounterpartyFormController {
     public void setInternalRating() {
         ObservableList<RatingInternal> list = FXCollections.observableArrayList(entity.getRatingInternalList());
         ratingInternalTable.setItems(list);
-        ratingInternalTable.setFixedCellSize(25);
-        ratingInternalTable.prefHeightProperty().bind(ratingInternalTable.fixedCellSizeProperty().multiply(Bindings.size(ratingInternalTable.getItems()).add(2.5)));
-        ratingInternalTable.minHeightProperty().bind(ratingInternalTable.prefHeightProperty());
-        ratingInternalTable.maxHeightProperty().bind(ratingInternalTable.prefHeightProperty());
+//        ratingInternalTable.setFixedCellSize(25);
+//        ratingInternalTable.prefHeightProperty().bind(ratingInternalTable.fixedCellSizeProperty().multiply(Bindings.size(ratingInternalTable.getItems()).add(2.5)));
+//        ratingInternalTable.minHeightProperty().bind(ratingInternalTable.prefHeightProperty());
+//        ratingInternalTable.maxHeightProperty().bind(ratingInternalTable.prefHeightProperty());
         ratingInternalTable.refresh();
     }
 

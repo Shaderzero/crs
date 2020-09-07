@@ -5,22 +5,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Portfolios")
+@Table(name = "portfolios")
 public class Portfolio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, insertable = true, updatable = true, length = 50)
+    @Column(name = "name", nullable = false, insertable = true, updatable = true, length = 50)
     private String name;
 
     @ManyToMany
-    @JoinTable(name = "CounterpartyPortfolios",
-            joinColumns = @JoinColumn(name = "Portfolio_id"),
-            inverseJoinColumns = @JoinColumn(name = "Counterparty_id"))
-    private List<Counterparty> counterpartyList = new ArrayList<>();
+    @JoinTable(name = "counterparty_portfolios",
+            joinColumns = @JoinColumn(name = "portfolio_id"),
+            inverseJoinColumns = @JoinColumn(name = "counterparty_id"))
+    private List<Counterparty> counterpartyPList = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -38,12 +38,12 @@ public class Portfolio {
         this.name = name;
     }
 
-    public List<Counterparty> getCounterpartyList() {
-        return counterpartyList;
+    public List<Counterparty> getCounterpartyPList() {
+        return counterpartyPList;
     }
 
-    public void setCounterpartyList(List<Counterparty> counterpartyList) {
-        this.counterpartyList = counterpartyList;
+    public void setCounterpartyPList(List<Counterparty> counterpartyPList) {
+        this.counterpartyPList = counterpartyPList;
     }
 
     @Override
@@ -55,14 +55,14 @@ public class Portfolio {
 
         if (id != portfolio.id) return false;
         if (name != null ? !name.equals(portfolio.name) : portfolio.name != null) return false;
-        return counterpartyList != null ? counterpartyList.equals(portfolio.counterpartyList) : portfolio.counterpartyList == null;
+        return counterpartyPList != null ? counterpartyPList.equals(portfolio.counterpartyPList) : portfolio.counterpartyPList == null;
     }
 
     @Override
     public int hashCode() {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (counterpartyList != null ? counterpartyList.hashCode() : 0);
+        result = 31 * result + (counterpartyPList != null ? counterpartyPList.hashCode() : 0);
         return result;
     }
 

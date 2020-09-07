@@ -1,17 +1,18 @@
 package ru.ge.data.entities;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
-@Table(name = "Currencies")
+@Table(name = "currencies")
 public class Currency {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, length = 3, unique = true)
+    @Column(name = "name")
     private String name;
 
     public int getId() {
@@ -34,25 +35,18 @@ public class Currency {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Currency currency = (Currency) o;
-
-        if (id != currency.id) return false;
-        return name != null ? name.equals(currency.name) : currency.name == null;
+        return id == currency.id &&
+                Objects.equals(name, currency.name);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
+        return Objects.hash(id, name);
     }
 
     @Override
     public String toString() {
-        return "Currency{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+        return name;
     }
 }

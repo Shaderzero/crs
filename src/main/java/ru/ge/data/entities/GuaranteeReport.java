@@ -4,31 +4,31 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "GuaranteeReports")
+@Table(name = "guarantee_reports")
 public class GuaranteeReport {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "Guarantee_id", referencedColumnName = "Id")
-    private Guarantee guarantee;
+    @JoinColumn(name = "guarantee_id", referencedColumnName = "id")
+    private Guarantee guaranteeP;
 
-    @Column(name = "DateReport", nullable = false)
+    @Column(name = "date_report", nullable = false)
     private LocalDate dateReport;
 
-    @Column(name = "DateExpiration")
+    @Column(name = "date_expiration")
     private LocalDate dateExpiration;
 
-    @Column(name = "AmountStart")
+    @Column(name = "amount_start")
     private long amountStart;
 
-    @Column(name = "AmountEnd")
+    @Column(name = "amount_end")
     private long amountEnd;
 
-    @Column(name = "AmountOperation")
+    @Column(name = "amount_operation")
     private long amountOperation;
 
     public int getId() {
@@ -39,12 +39,12 @@ public class GuaranteeReport {
         this.id = id;
     }
 
-    public Guarantee getGuarantee() {
-        return guarantee;
+    public Guarantee getGuaranteeP() {
+        return guaranteeP;
     }
 
-    public void setGuarantee(Guarantee guarantee) {
-        this.guarantee = guarantee;
+    public void setGuaranteeP(Guarantee guaranteeP) {
+        this.guaranteeP = guaranteeP;
     }
 
     public LocalDate getDateReport() {
@@ -98,7 +98,7 @@ public class GuaranteeReport {
         if (amountStart != that.amountStart) return false;
         if (amountEnd != that.amountEnd) return false;
         if (amountOperation != that.amountOperation) return false;
-        if (guarantee != null ? !guarantee.equals(that.guarantee) : that.guarantee != null) return false;
+        if (guaranteeP != null ? !guaranteeP.equals(that.guaranteeP) : that.guaranteeP != null) return false;
         if (dateReport != null ? !dateReport.equals(that.dateReport) : that.dateReport != null) return false;
         return dateExpiration != null ? dateExpiration.equals(that.dateExpiration) : that.dateExpiration == null;
     }
@@ -106,7 +106,7 @@ public class GuaranteeReport {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (guarantee != null ? guarantee.hashCode() : 0);
+        result = 31 * result + (guaranteeP != null ? guaranteeP.hashCode() : 0);
         result = 31 * result + (dateReport != null ? dateReport.hashCode() : 0);
         result = 31 * result + (dateExpiration != null ? dateExpiration.hashCode() : 0);
         result = 31 * result + (int) (amountStart ^ (amountStart >>> 32));
@@ -119,7 +119,7 @@ public class GuaranteeReport {
     public String toString() {
         return "GuaranteeAmount{" +
                 "id=" + id +
-                ", guarantee=" + guarantee +
+                ", guarantee=" + guaranteeP +
                 ", reportDate=" + dateReport +
                 ", amount=" + amountStart +
                 ", operationalAmount=" + amountOperation +

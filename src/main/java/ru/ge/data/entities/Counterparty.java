@@ -4,68 +4,81 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Table(name = "Counterparties")
+@Table(name = "counterparties")
 public class Counterparty {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, length = 450, unique = true)
+    @Column(name = "name", nullable = false, length = 450, unique = true)
     private String name;
 
-    @Column(name = "ShortName", nullable = false, length = 15, unique = true)
+    @Column(name = "short_name", nullable = false, length = 15, unique = true)
     private String shortName;
 
-    @Column(name = "IntraGroup", nullable = false)
+    @Column(name = "intra_group", nullable = false)
     private boolean intraGroup;
 
-    @Column(name = "DateStart", nullable = false)
+    @Column(name = "date_start", nullable = false)
     private LocalDate dateStart;
 
-    @Column(name = "Comment", length = 1000)
+    @Column(name = "comment", length = 1000)
     private String comment;
 
-    @Column(name = "Monitored", nullable = false)
+    @Column(name = "monitored", nullable = false)
     private boolean monitored;
 
-    @Column(name = "Ticker", length = 50)
+    @Column(name = "ticker", length = 50)
     private String ticker;
 
-    @Column(name = "Inn", length = 30)
+    @Column(name = "inn", length = 30)
     private String inn;
 
-    @Column(name = "Swift", length = 100)
+    @Column(name = "swift", length = 100)
     private String swift;
 
+    @Column(name = "long_term", nullable = false)
+    private boolean isLongTerm;
+
+    @Column(name = "etp", nullable = false)
+    private boolean isETP;
+
+    @Column(name = "efet", nullable = false)
+    private boolean isEFET;
+
+    @Column(name = "gtc")
+    private String gtc;
+
     @ManyToOne
-    @JoinColumn(name = "FinancialSector_id", referencedColumnName = "Id")
+    @JoinColumn(name = "financial_sector_id", referencedColumnName = "id")
     private FinancialSector financialSector;
 
     @ManyToOne
-    @JoinColumn(name = "Country_id", referencedColumnName = "Id")
+    @JoinColumn(name = "country_id", referencedColumnName = "id")
     private Country country;
 
     @ManyToOne
-    @JoinColumn(name = "CountryRisk_id", referencedColumnName = "Id")
+    @JoinColumn(name = "country_risk_id", referencedColumnName = "id")
     private Country countryRisk;
 
     @ManyToOne
-    @JoinColumn(name = "RatingDonor_id", referencedColumnName = "Id")
+    @JoinColumn(name = "rating_donor_id", referencedColumnName = "id")
     private Counterparty ratingDonor;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "CounterpartyPortfolios",
-            joinColumns = @JoinColumn(name = "Counterparty_id"),
-            inverseJoinColumns = @JoinColumn(name = "Portfolio_id"))
+    @JoinTable(name = "counterparty_portfolios",
+            joinColumns = @JoinColumn(name = "counterparty_id"),
+            inverseJoinColumns = @JoinColumn(name = "portfolio_id"))
     @OrderBy("name")
     private List<Portfolio> portfolioList = new ArrayList<>();
 
     @ManyToOne
-    @JoinColumn(name = "CounterpartyGroup_id", referencedColumnName = "Id")
+    @JoinColumn(name = "counterparty_group_id", referencedColumnName = "id")
     private CounterpartyGroup counterpartyGroup;
 
     @OneToMany(mappedBy = "counterparty", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -178,8 +191,8 @@ public class Counterparty {
         return financialSector;
     }
 
-    public void setFinancialSector(FinancialSector financialSector) {
-        this.financialSector = financialSector;
+    public void setFinancialSector(FinancialSector financialSectorP) {
+        this.financialSector = financialSectorP;
     }
 
     public Country getCountry() {
@@ -194,8 +207,8 @@ public class Counterparty {
         return countryRisk;
     }
 
-    public void setCountryRisk(Country countryRisk) {
-        this.countryRisk = countryRisk;
+    public void setCountryRisk(Country countryRiskP) {
+        this.countryRisk = countryRiskP;
     }
 
     public Counterparty getRatingDonor() {
@@ -210,8 +223,8 @@ public class Counterparty {
         return portfolioList;
     }
 
-    public void setPortfolioList(List<Portfolio> portfolioList) {
-        this.portfolioList = portfolioList;
+    public void setPortfolioList(List<Portfolio> portfolioPList) {
+        this.portfolioList = portfolioPList;
     }
 
     public CounterpartyGroup getCounterpartyGroup() {
@@ -234,88 +247,93 @@ public class Counterparty {
         return ratingInternalList;
     }
 
-    public void setRatingInternalList(List<RatingInternal> ratingInternalList) {
-        this.ratingInternalList = ratingInternalList;
+    public void setRatingInternalList(List<RatingInternal> ratingInternalPList) {
+        this.ratingInternalList = ratingInternalPList;
     }
 
     public List<RatingExternal> getRatingExternalList() {
         return ratingExternalList;
     }
 
-    public void setRatingExternalList(List<RatingExternal> ratingExternalList) {
-        this.ratingExternalList = ratingExternalList;
+    public void setRatingExternalList(List<RatingExternal> ratingExternalPList) {
+        this.ratingExternalList = ratingExternalPList;
     }
 
     public List<Committee> getCommitteeList() {
         return committeeList;
     }
 
-    public void setCommitteeList(List<Committee> committeeList) {
-        this.committeeList = committeeList;
+    public void setCommitteeList(List<Committee> committeePList) {
+        this.committeeList = committeePList;
+    }
+
+    public boolean isLongTerm() {
+        return isLongTerm;
+    }
+
+    public void setLongTerm(boolean longTerm) {
+        isLongTerm = longTerm;
+    }
+
+    public boolean isETP() {
+        return isETP;
+    }
+
+    public void setETP(boolean ETP) {
+        isETP = ETP;
+    }
+
+    public boolean isEFET() {
+        return isEFET;
+    }
+
+    public void setEFET(boolean EFET) {
+        isEFET = EFET;
+    }
+
+    public String getGtc() {
+        return gtc;
+    }
+
+    public void setGtc(String gtc) {
+        this.gtc = gtc;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Counterparty that = (Counterparty) o;
-
-        if (id != that.id) return false;
-        if (intraGroup != that.intraGroup) return false;
-        if (monitored != that.monitored) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (shortName != null ? !shortName.equals(that.shortName) : that.shortName != null) return false;
-        if (dateStart != null ? !dateStart.equals(that.dateStart) : that.dateStart != null) return false;
-        if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;
-        if (ticker != null ? !ticker.equals(that.ticker) : that.ticker != null) return false;
-        if (inn != null ? !inn.equals(that.inn) : that.inn != null) return false;
-        if (swift != null ? !swift.equals(that.swift) : that.swift != null) return false;
-        if (financialSector != null ? !financialSector.equals(that.financialSector) : that.financialSector != null)
-            return false;
-        if (country != null ? !country.equals(that.country) : that.country != null)
-            return false;
-        if (countryRisk != null ? !countryRisk.equals(that.countryRisk) : that.countryRisk != null) return false;
-        if (ratingDonor != null ? !ratingDonor.equals(that.ratingDonor) : that.ratingDonor != null) return false;
-        if (portfolioList != null ? !portfolioList.equals(that.portfolioList) : that.portfolioList != null)
-            return false;
-        if (counterpartyGroup != null ? !counterpartyGroup.equals(that.counterpartyGroup) : that.counterpartyGroup != null)
-            return false;
-        if (financialStatementList != null ? !financialStatementList.equals(that.financialStatementList) : that.financialStatementList != null)
-            return false;
-        if (ratingInternalList != null ? !ratingInternalList.equals(that.ratingInternalList) : that.ratingInternalList != null)
-            return false;
-        if (ratingExternalList != null ? !ratingExternalList.equals(that.ratingExternalList) : that.ratingExternalList != null)
-            return false;
-        if (committeeList != null ? !committeeList.equals(that.committeeList) : that.committeeList != null)
-            return false;
-        return donorList != null ? donorList.equals(that.donorList) : that.donorList == null;
+        return id == that.id &&
+                intraGroup == that.intraGroup &&
+                monitored == that.monitored &&
+                isLongTerm == that.isLongTerm &&
+                isETP == that.isETP &&
+                isEFET == that.isEFET &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(shortName, that.shortName) &&
+                Objects.equals(dateStart, that.dateStart) &&
+                Objects.equals(comment, that.comment) &&
+                Objects.equals(ticker, that.ticker) &&
+                Objects.equals(inn, that.inn) &&
+                Objects.equals(swift, that.swift) &&
+                Objects.equals(gtc, that.gtc) &&
+                Objects.equals(financialSector, that.financialSector) &&
+                Objects.equals(country, that.country) &&
+                Objects.equals(countryRisk, that.countryRisk) &&
+                Objects.equals(ratingDonor, that.ratingDonor) &&
+                Objects.equals(portfolioList, that.portfolioList) &&
+                Objects.equals(counterpartyGroup, that.counterpartyGroup) &&
+                Objects.equals(financialStatementList, that.financialStatementList) &&
+                Objects.equals(ratingInternalList, that.ratingInternalList) &&
+                Objects.equals(ratingExternalList, that.ratingExternalList) &&
+                Objects.equals(committeeList, that.committeeList) &&
+                Objects.equals(donorList, that.donorList);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (shortName != null ? shortName.hashCode() : 0);
-        result = 31 * result + (intraGroup ? 1 : 0);
-        result = 31 * result + (dateStart != null ? dateStart.hashCode() : 0);
-        result = 31 * result + (comment != null ? comment.hashCode() : 0);
-        result = 31 * result + (monitored ? 1 : 0);
-        result = 31 * result + (ticker != null ? ticker.hashCode() : 0);
-        result = 31 * result + (inn != null ? inn.hashCode() : 0);
-        result = 31 * result + (swift != null ? swift.hashCode() : 0);
-        result = 31 * result + (financialSector != null ? financialSector.hashCode() : 0);
-        result = 31 * result + (country != null ? country.hashCode() : 0);
-        result = 31 * result + (countryRisk != null ? countryRisk.hashCode() : 0);
-        result = 31 * result + (ratingDonor != null ? ratingDonor.hashCode() : 0);
-        result = 31 * result + (portfolioList != null ? portfolioList.hashCode() : 0);
-        result = 31 * result + (counterpartyGroup != null ? counterpartyGroup.hashCode() : 0);
-        result = 31 * result + (financialStatementList != null ? financialStatementList.hashCode() : 0);
-        result = 31 * result + (ratingInternalList != null ? ratingInternalList.hashCode() : 0);
-        result = 31 * result + (ratingExternalList != null ? ratingExternalList.hashCode() : 0);
-        result = 31 * result + (committeeList != null ? committeeList.hashCode() : 0);
-        result = 31 * result + (donorList != null ? donorList.hashCode() : 0);
-        return result;
+        return Objects.hash(id, name, shortName, intraGroup, dateStart, comment, monitored, ticker, inn, swift, isLongTerm, isETP, isEFET, gtc, financialSector, country, countryRisk, ratingDonor, portfolioList, counterpartyGroup, financialStatementList, ratingInternalList, ratingExternalList, committeeList, donorList);
     }
 
     @Override

@@ -6,7 +6,7 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="0.0" minWidth="0.0"
             fx:controller="ru.ge.guifx.controllers.CounterpartyFormController">
     <children>
-        <VBox maxHeight="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+        <VBox maxHeight="Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox maxHeight="Infinity" spacing="5.0">
@@ -31,29 +31,37 @@
                 </HBox>
                 <FlowPane hgap="5">
                     <children>
-                        <GridPane maxWidth="300.0" minWidth="300.0" prefWidth="300.0" hgap="5" vgap="1">
+                        <GridPane maxWidth="300.0" minWidth="300.0" prefWidth="280.0" hgap="5" vgap="1">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0"/>
-                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="200.0"/>
                             </columnConstraints>
                             <rowConstraints>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0"/>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0"/>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
                             </rowConstraints>
                             <children>
-                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Short Name"/>
-                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Financial Sector"
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Short Name"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="INN" GridPane.columnIndex="0"
                                        GridPane.rowIndex="1"/>
-                                <ComboBox fx:id="financialSectorBox" maxWidth="Infinity" GridPane.columnIndex="1"
-                                          GridPane.rowIndex="1"/>
-                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Rating Donor"
-                                       GridPane.rowIndex="2"/>
-                                <ComboBox fx:id="ratingDonorBox" maxWidth="Infinity" GridPane.columnIndex="1"
-                                          GridPane.rowIndex="2"/>
-                                <TextField fx:id="shortNameField" maxWidth="Infinity" GridPane.columnIndex="1"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="SWIFT"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Ticker"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="GTC" GridPane.columnIndex="0"
+                                       GridPane.rowIndex="4"/>
+                                <TextField fx:id="shortNameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                                <TextField fx:id="innField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <TextField fx:id="swiftField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tickerField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <TextField fx:id="gtcField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
                             </children>
                         </GridPane>
+
                         <GridPane maxWidth="300.0" minWidth="300.0" prefWidth="300.0" hgap="5" vgap="1">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0"/>
@@ -63,17 +71,30 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0"/>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0"/>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
                             </rowConstraints>
                             <children>
-                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Country of Domicile"/>
-                                <ComboBox fx:id="countryDomicileBox" maxWidth="Infinity" GridPane.columnIndex="1"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Country of Domicile"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                                 <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Country of Risk"
-                                       GridPane.rowIndex="1"/>
+                                       GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Financial Sector"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Rating Donor"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Group"
+                                       GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                                <ComboBox fx:id="countryDomicileBox" maxWidth="Infinity" GridPane.columnIndex="1"
+                                          GridPane.rowIndex="0"/>
                                 <ComboBox fx:id="countryRiskBox" maxWidth="Infinity" GridPane.columnIndex="1"
                                           GridPane.rowIndex="1"/>
-                                <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Group" GridPane.rowIndex="2"/>
+                                <ComboBox fx:id="financialSectorBox" maxWidth="Infinity" GridPane.columnIndex="1"
+                                          GridPane.rowIndex="2"/>
+                                <ComboBox fx:id="ratingDonorBox" maxWidth="Infinity" GridPane.columnIndex="1"
+                                          GridPane.rowIndex="3"/>
                                 <ComboBox fx:id="groupBox" maxWidth="Infinity" prefWidth="150.0"
-                                          GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                          GridPane.columnIndex="1" GridPane.rowIndex="4"/>
                             </children>
                         </GridPane>
                         <GridPane maxWidth="300.0" minWidth="300.0" prefWidth="300.0" hgap="5" vgap="1">
@@ -100,22 +121,19 @@
                                        GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                                 <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Ticker"
                                        GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                                <TextField fx:id="innField" GridPane.columnIndex="2"/>
-                                <TextField fx:id="swiftField" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-                                <TextField fx:id="tickerField" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
                             </children>
                         </GridPane>
                     </children>
                 </FlowPane>
                 <ScrollPane maxWidth="Infinity" fitToWidth="true"
-                            style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;">
+                            fx:id="scrollPane">
                     <!--                    <AnchorPane minHeight="0" minWidth="0" style=" -fx-border-color:red; -fx-border-width: 1; -fx-border-style: solid;">-->
-                    <VBox minWidth="0" prefWidth="900.0" maxWidth="Infinity" spacing="5"
-                          style=" -fx-border-color:blue; -fx-border-width: 1; -fx-border-style: solid;">
+                    <VBox minWidth="0" prefWidth="900.0" maxWidth="Infinity" spacing="5" maxHeight="Infinity">
                         <children>
-                            <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                            <VBox fx:id="pBox" prefHeight="200.0" maxHeight="400.0" prefWidth="300.0" spacing="5">
                                 <children>
-                                    <HBox spacing="5">
+                                    <HBox prefHeight="25" maxHeight="25" minHeight="25" spacing="5">
                                         <Label maxHeight="Infinity" HBox.hgrow="ALWAYS" alignment="CENTER"
                                                contentDisplay="CENTER" maxWidth="Infinity" text="Internal Ratings"/>
                                         <HBox alignment="BASELINE_RIGHT" spacing="5">
@@ -186,9 +204,10 @@
                                     <Insets topRightBottomLeft="5"/>
                                 </padding>
                             </VBox>
-                            <FlowPane style=" -fx-border-color:green; -fx-border-width: 1; -fx-border-style: solid;">
+                            <FlowPane maxHeight="Infinity" fx:id="flowPane">
                                 <children>
-                                    <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                                    <VBox fx:id="pBox1" prefHeight="200.0" maxHeight="400.0" prefWidth="300.0"
+                                          spacing="5">
                                         <children>
                                             <HBox prefHeight="25" maxHeight="25" minHeight="25" spacing="5">
                                                 <Label maxHeight="Infinity" HBox.hgrow="ALWAYS" alignment="CENTER"
@@ -236,7 +255,8 @@
                                             <Insets topRightBottomLeft="5"/>
                                         </padding>
                                     </VBox>
-                                    <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                                    <VBox fx:id="pBox2" prefHeight="200.0" maxHeight="400.0" prefWidth="300.0"
+                                          spacing="5">
                                         <children>
                                             <Label fx:id="countryRiskLabel" prefHeight="25" maxHeight="25"
                                                    minHeight="25" alignment="CENTER" contentDisplay="CENTER"
@@ -271,7 +291,8 @@
                                             <Insets topRightBottomLeft="5"/>
                                         </padding>
                                     </VBox>
-                                    <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                                    <VBox fx:id="pBox3" prefHeight="200.0" maxHeight="400.0" prefWidth="300.0"
+                                          spacing="5">
                                         <children>
                                             <Label fx:id="countryLabel" prefHeight="25" maxHeight="25" minHeight="25"
                                                    alignment="CENTER" contentDisplay="CENTER" maxWidth="Infinity"
@@ -307,7 +328,8 @@
                                             <Insets topRightBottomLeft="5"/>
                                         </padding>
                                     </VBox>
-                                    <VBox maxHeight="200.0" prefWidth="300.0" spacing="5">
+                                    <VBox fx:id="pBox4" prefHeight="200.0" maxHeight="400.0" prefWidth="300.0"
+                                          spacing="5">
                                         <children>
                                             <HBox prefHeight="25" maxHeight="25" minHeight="25" spacing="5">
                                                 <Label maxHeight="Infinity" HBox.hgrow="ALWAYS" alignment="CENTER"
@@ -349,7 +371,8 @@
                                             <Insets topRightBottomLeft="5"/>
                                         </padding>
                                     </VBox>
-                                    <VBox maxHeight="200.0" prefWidth="605.0" spacing="5">
+                                    <VBox fx:id="pBox5" prefHeight="200.0" maxHeight="400.0" prefWidth="605.0"
+                                          spacing="5">
                                         <children>
                                             <HBox prefHeight="25" maxHeight="25" minHeight="25" spacing="5">
                                                 <Label maxHeight="Infinity" HBox.hgrow="ALWAYS" alignment="CENTER"

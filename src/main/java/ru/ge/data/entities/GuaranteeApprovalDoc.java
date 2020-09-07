@@ -4,26 +4,26 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "GuaranteeApprovalDocs")
+@Table(name = "guarantee_approval_docs")
 public class GuaranteeApprovalDoc {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "Guarantee_id", referencedColumnName = "Id")
-    private Guarantee guarantee;
+    @JoinColumn(name = "guarantee_id", referencedColumnName = "id")
+    private Guarantee guaranteeP;
 
-    @Column(name = "DateApproval", nullable = false)
+    @Column(name = "date_approval", nullable = false)
     private LocalDate dateApproval;
 
     @ManyToOne
-    @JoinColumn(name = "GuaranteeApprovalDocType_id", referencedColumnName = "Id")
+    @JoinColumn(name = "guarantee_approval_doc_type_id", referencedColumnName = "id")
     private GuaranteeApprovalDocType docType;
 
-    @Column(name = "Number", length = 1000, nullable = false)
+    @Column(name = "number", length = 1000, nullable = false)
     private String number;
 
     public int getId() {
@@ -34,12 +34,12 @@ public class GuaranteeApprovalDoc {
         this.id = id;
     }
 
-    public Guarantee getGuarantee() {
-        return guarantee;
+    public Guarantee getGuaranteeP() {
+        return guaranteeP;
     }
 
-    public void setGuarantee(Guarantee guarantee) {
-        this.guarantee = guarantee;
+    public void setGuaranteeP(Guarantee guaranteeP) {
+        this.guaranteeP = guaranteeP;
     }
 
     public LocalDate getDateApproval() {
@@ -54,8 +54,8 @@ public class GuaranteeApprovalDoc {
         return docType;
     }
 
-    public void setDocType(GuaranteeApprovalDocType guaranteeApprovalDocType) {
-        this.docType = guaranteeApprovalDocType;
+    public void setDocType(GuaranteeApprovalDocType guaranteeApprovalDocTypeP) {
+        this.docType = guaranteeApprovalDocTypeP;
     }
 
     public String getNumber() {
@@ -74,7 +74,7 @@ public class GuaranteeApprovalDoc {
         GuaranteeApprovalDoc that = (GuaranteeApprovalDoc) o;
 
         if (id != that.id) return false;
-        if (guarantee != null ? !guarantee.equals(that.guarantee) : that.guarantee != null) return false;
+        if (guaranteeP != null ? !guaranteeP.equals(that.guaranteeP) : that.guaranteeP != null) return false;
         if (dateApproval != null ? !dateApproval.equals(that.dateApproval) : that.dateApproval != null) return false;
         if (docType != null ? !docType.equals(that.docType) : that.docType != null)
             return false;
@@ -84,7 +84,7 @@ public class GuaranteeApprovalDoc {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (guarantee != null ? guarantee.hashCode() : 0);
+        result = 31 * result + (guaranteeP != null ? guaranteeP.hashCode() : 0);
         result = 31 * result + (dateApproval != null ? dateApproval.hashCode() : 0);
         result = 31 * result + (docType != null ? docType.hashCode() : 0);
         result = 31 * result + (number != null ? number.hashCode() : 0);
@@ -95,7 +95,7 @@ public class GuaranteeApprovalDoc {
     public String toString() {
         return "GuaranteeApprovalDoc{" +
                 "id=" + id +
-                ", guarantee=" + guarantee +
+                ", guarantee=" + guaranteeP +
                 ", approvalDate=" + dateApproval +
                 ", guaranteeApprovalDocType=" + docType +
                 ", number='" + number + '\'' +

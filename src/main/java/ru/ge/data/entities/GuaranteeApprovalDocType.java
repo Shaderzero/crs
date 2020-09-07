@@ -3,15 +3,15 @@ package ru.ge.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "GuaranteeApprovalDocTypes")
+@Table(name = "guarantee_approval_doc_types")
 public class GuaranteeApprovalDocType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, length = 255, unique = true)
+    @Column(name = "name", nullable = false, length = 255, unique = true)
     private String name;
 
     public int getId() {

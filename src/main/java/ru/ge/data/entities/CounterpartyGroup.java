@@ -3,15 +3,15 @@ package ru.ge.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "CounterpartyGroups")
+@Table(name = "counterparty_groups")
 public class CounterpartyGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Name", nullable = false, length = 100, unique = true)
+    @Column(name = "name", nullable = false, length = 100, unique = true)
     private String name;
 
     public int getId() {

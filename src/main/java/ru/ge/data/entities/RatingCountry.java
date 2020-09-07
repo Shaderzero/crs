@@ -4,27 +4,27 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "RatingCountries")
+@Table(name = "rating_countries")
 public class RatingCountry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "DateStart", nullable = false)
+    @Column(name = "date_start", nullable = false)
     private LocalDate dateStart;
 
     @ManyToOne
-    @JoinColumn(name = "RatingAgency_id", referencedColumnName = "Id")
+    @JoinColumn(name = "rating_agency_id", referencedColumnName = "id")
     private RatingAgency ratingAgency;
 
     @ManyToOne
-    @JoinColumn(name = "Rating_id", referencedColumnName = "Id")
+    @JoinColumn(name = "rating_id", referencedColumnName = "id")
     private Rating rating;
 
     @ManyToOne
-    @JoinColumn(name = "Country_id", referencedColumnName = "Id")
+    @JoinColumn(name = "country_id", referencedColumnName = "id")
     private Country country;
 
     public int getId() {
@@ -55,8 +55,8 @@ public class RatingCountry {
         return rating;
     }
 
-    public void setRating(Rating ratingValue) {
-        this.rating = ratingValue;
+    public void setRating(Rating ratingValueP) {
+        this.rating = ratingValueP;
     }
 
     public Country getCountry() {

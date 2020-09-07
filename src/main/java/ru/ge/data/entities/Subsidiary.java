@@ -3,18 +3,18 @@ package ru.ge.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Subsidiaries")
+@Table(name = "subsidiaries")
 public class Subsidiary {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "Code", nullable = false, insertable = true, updatable = true, unique = true)
+    @Column(name = "code", nullable = false, insertable = true, updatable = true, unique = true)
     private int code;
 
-    @Column(name = "Name", nullable = false, insertable = true, updatable = true, length = 255, unique = true)
+    @Column(name = "name", nullable = false, insertable = true, updatable = true, length = 255, unique = true)
     private String name;
 
     public int getId() {
@@ -63,10 +63,6 @@ public class Subsidiary {
 
     @Override
     public String toString() {
-        return "Subsidiary{" +
-                "id=" + id +
-                ", code=" + code +
-                ", name='" + name + '\'' +
-                '}';
+        return name;
     }
 }

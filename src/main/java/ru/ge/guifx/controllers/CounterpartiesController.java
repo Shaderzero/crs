@@ -14,8 +14,10 @@ import javafx.scene.layout.AnchorPane;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import ru.ge.data.HibernateUtil;
-import ru.ge.data.entities.*;
-import ru.ge.guifx.FxUtil;
+import ru.ge.data.entities.Counterparty;
+import ru.ge.data.entities.Portfolio;
+import ru.ge.data.entities.RatingExternal;
+import ru.ge.data.entities.RatingInternal;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -78,22 +80,22 @@ public class CounterpartiesController {
     }
 
     private void hideColumns() {
-        UserSetting settings = FxUtil.userSettings;
-        idCol.setVisible(settings.getTableCounterpartyShowId());
-        sNameCol.setVisible(settings.getTableCounterpartyShowShortName());
-        sectorCol.setVisible(settings.getTableCounterpartyShowSector());
-        cRiskCol.setVisible(settings.getTableCounterpartyShowCountryOfRisk());
-        domCol.setVisible(settings.getTableCounterpartyShowCountryOfDomicile());
-        intraCol.setVisible(settings.getTableCounterpartyShowIntraGroup());
-        portfolioCol.setVisible(settings.getTableCounterpartyShowPortfolio());
-        donorCol.setVisible(settings.getTableCounterpartyShowDonor());
-        dateCol.setVisible(settings.getTableCounterpartyShowStartDate());
-        commentCol.setVisible(settings.getTableCounterpartyShowComment());
-        innCol.setVisible(settings.getTableCounterpartyShowINN());
-        swiftCol.setVisible(settings.getTableCounterpartyShowSWIFT());
-        tickerCol.setVisible(settings.getTableCounterpartyShowTicker());
-        ratingIntCol.setVisible(settings.getTableCounterpartyShowLastIntRating());
-        ratingExtCol.setVisible(settings.getTableCounterpartyShowLastExtRating());
+//        UserSetting settings = FxUtil.userSettings;
+//        idCol.setVisible(settings.getTableCounterpartyShowId());
+//        sNameCol.setVisible(settings.getTableCounterpartyShowShortName());
+//        sectorCol.setVisible(settings.getTableCounterpartyShowSector());
+//        cRiskCol.setVisible(settings.getTableCounterpartyShowCountryOfRisk());
+//        domCol.setVisible(settings.getTableCounterpartyShowCountryOfDomicile());
+//        intraCol.setVisible(settings.getTableCounterpartyShowIntraGroup());
+//        portfolioCol.setVisible(settings.getTableCounterpartyShowPortfolio());
+//        donorCol.setVisible(settings.getTableCounterpartyShowDonor());
+//        dateCol.setVisible(settings.getTableCounterpartyShowStartDate());
+//        commentCol.setVisible(settings.getTableCounterpartyShowComment());
+//        innCol.setVisible(settings.getTableCounterpartyShowINN());
+//        swiftCol.setVisible(settings.getTableCounterpartyShowSWIFT());
+//        tickerCol.setVisible(settings.getTableCounterpartyShowTicker());
+//        ratingIntCol.setVisible(settings.getTableCounterpartyShowLastIntRating());
+//        ratingExtCol.setVisible(settings.getTableCounterpartyShowLastExtRating());
     }
 
     private void setColumnFactories() {
